@@ -38,7 +38,7 @@ It is very likely that such application is already existing but our focus is to 
 
 Our data collection strategy was to look for official websites providing reliable data on carbon emissions by country. We chose this approach to rely on well collected and organized data. 
 
-We found and downloaded a data set containing more than 70,000 entries ordered by country and by year on the following website: https://data.world/footprint. We uploaded the data set in r and saved in the **read_data.R** file. 
+We found and downloaded a data set containing more than 70,000 entries ordered by country and by year on the following website: https://data.world/footprint. We uploaded the data set in r and saved in the **read_data.R** file. Moreover we might enrich this data with other variables such as population, GDP or others.    
 
 # Timeline and Milestones 
 
