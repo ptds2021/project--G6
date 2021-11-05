@@ -1,9 +1,11 @@
 ---
 title: "Project Proposal"
-subtitle: "Interactive Shiny App: Carbon Emissions by Coutry and by Year"
 author: "from Daniel Welz, Guillaume Bilocq, Jasmine Mawjee, Virany Kho, Colin Steffe"
 date: "`r Sys.Date()`"
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
+subtitle: 'Interactive Shiny App: Carbon Emissions by Coutry and by Year'
 ---
 
 ```{r setup, include=FALSE}
@@ -159,7 +161,7 @@ The following table displays the mandatory administrative tasks that we already 
 
 library(kableExtra)
 
-df <- data.frame(Gp_members = c("Collin", "Jasmine", "Guillaume", "Daniel", "Virany"),
+df <- data.frame(Gp_members = c("Colin", "Jasmine", "Guillaume", "Daniel", "Virany"),
                  Admin_tasks = c("will be reminding everyone about the Zoom meeting every week, create it and send it on the group chat", 
                                  "will track the advancement of the project on Github, manage the organization of the Project folder so that it does not become messy as the project progress", 
                                  "will manage the project advancement in order to not be late compared to the timeline we decided to set for each task", 
