@@ -160,7 +160,7 @@ At each meeting, each team member will be able to share personal advancements an
 
 *Table 1* displays the mandatory administrative tasks that we already assigned to team members. 
 
-```{r, administrative tasks, echo=F, message=FALSE, warning=FALSE}
+```{r, echo=F, message=FALSE, warning=FALSE}
 
 library(kableExtra)
 library(gridExtra)
@@ -176,8 +176,7 @@ df_t <- as_tibble(df)
 
 df_t %>% 
   kbl(align = c('c', 'c'), 
-      caption = "Group members administrative tasks",
-      booktabs = TRUE) %>%
+      caption = "Group members administrative tasks") %>%
   kable_styling(bootstrap_options = c("striped", "hover"), 
                 latex_options = "scale_down") 
 
