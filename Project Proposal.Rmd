@@ -3,7 +3,9 @@ title: "Project Proposal"
 author: "from Daniel Welz, Guillaume Bilocq, Jasmine Mawjee, Virany Kho, Colin Steffe"
 date: "`r Sys.Date()`"
 output:
+  bookdown::pdf_document2: default
   html_document:
+    highlight: tango
     df_print: paged
 subtitle: 'Interactive Shiny App: Carbon Emissions by Coutry and by Year'
 ---
@@ -11,6 +13,8 @@ subtitle: 'Interactive Shiny App: Carbon Emissions by Coutry and by Year'
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+***
 
 # Goals and Impact 
 
@@ -42,7 +46,7 @@ We found and downloaded a data set containing more than 70,000 entries ordered b
 
 # Timeline and Milestones 
 
-```{r Gant chart, echo=FALSE, message=F, warning=F}
+```{r Gant chart, fig.width = 10, echo=F, message=F, warning=F}
 
 library(tidyverse)
 library(ggplot2)
@@ -114,8 +118,6 @@ gant <- data.frame(Item,
                    Start, 
                    End)
 
-gant
-
 acts <- c("Find daily routines and worldwide data", 
           "Transform data into usable environmental units (CO2 consumption)", 
           "Project proposal", 
@@ -144,10 +146,11 @@ ggplot(g.gantt,
   
   geom_line(size = 10) +
   
-  labs(x="Date", y=NULL, title="Project timeline")
+  labs(x = "Date", 
+       y = NULL, 
+       title = "Project timeline")
 
 ```
-
 
 # Management Plan 
 
@@ -155,11 +158,12 @@ For the purpose of the progress of our project, we are planning to have at least
 
 At each meeting, each team member will be able to share personal advancements and achievements on their respective tasks, ask for help if needed and share potential improvement ideas for other tasks. Each team member will be assigned to one or more tasks depending on tasks' difficulty level. Indeed, a task can have few people working on it if it is time-consuming.
 
-The following table displays the mandatory administrative tasks that we already assigned to team members. 
+*Table 1* displays the mandatory administrative tasks that we already assigned to team members. 
 
-```{r, echo=F, message=FALSE, warning=FALSE}
+```{r, administrative tasks, echo=F, message=FALSE, warning=FALSE}
 
 library(kableExtra)
+library(gridExtra)
 
 df <- data.frame(Gp_members = c("Colin", "Jasmine", "Guillaume", "Daniel", "Virany"),
                  Admin_tasks = c("will be reminding everyone about the Zoom meeting every week, create it and send it on the group chat", 
@@ -171,9 +175,11 @@ df <- data.frame(Gp_members = c("Colin", "Jasmine", "Guillaume", "Daniel", "Vira
 df_t <- as_tibble(df)
 
 df_t %>% 
-  kbl(align = c('c', 'c'), caption = "Group members administrative tasks") %>%
+  kbl(align = c('c', 'c'), 
+      caption = "Group members administrative tasks",
+      booktabs = TRUE) %>%
   kable_styling(bootstrap_options = c("striped", "hover"), 
-                full_width = F) 
+                latex_options = "scale_down") 
 
 ```
 
