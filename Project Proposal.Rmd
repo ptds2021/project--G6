@@ -3,10 +3,11 @@ title: "Project Proposal"
 author: "from Daniel Welz, Guillaume Bilocq, Jasmine Mawjee, Virany Kho, Colin Steffe"
 date: "`r Sys.Date()`"
 output:
-  bookdown::pdf_document2: default
+  pdf_document: default
   html_document:
     highlight: tango
     df_print: paged
+  bookdown::pdf_document2: default
 subtitle: 'Interactive Shiny App: Carbon Emissions by Coutry and by Year'
 ---
 
