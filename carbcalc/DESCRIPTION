@@ -1,0 +1,15 @@
+Package: carbcalc
+Title: What the Package Does (One Line, Title Case)
+Version: 0.1.0
+Authors@R: c(
+    person("Virany", "Kho", email = "virany.kho@unil.ch", role = "aut"),
+    person("Colin", "Steffe", email = "colin.steffe@unil.ch", role = "cre"),  
+    person("Guillaume", "Bilocq", email = "guillaume.bilocq@unil.ch", role = "aut"), 
+    person("Daniel", "Welz", email = "daniel.welz@unil.ch", role = "aut"),  
+    person("Jasmine", "Mawjee", email = "jasmine.mawjee@unil.ch", role = "aut"))
+Maintainer: Colin Steffe <colin.steffe@unil.ch>
+Description:
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
