@@ -1,0 +1,20 @@
+---
+title: "Final Project: Carbon Emissions by Coutry and by Year"
+author: Daniel Welz, Guillaume Bilocq, Jasmine Mawjee, Virany Kho, Colin Steffe
+date: ``
+output: html_document
+---
+
+```{r data importation, echo=F, warning=F, message=F}
+
+library(readr)
+
+# Set option to remove any scientific notation
+options(scipen=999)
+
+# Upload the data 
+data<- read_csv("data/NFA 2019 public_data.csv")
+country_code_table <- read_csv("data/GFN Country Code Concordance Table.csv")
+
+```
+
