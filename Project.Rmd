@@ -18,3 +18,21 @@ country_code_table <- read_csv("data/GFN Country Code Concordance Table.csv")
 
 ```
 
+# Introduction 
+
+# Data description 
+
+# Exploratory data analysis
+
+# R package
+- what and how
+
+# Shiny app
+- what and how
+
+# Website
+- what and how
+
+# Conclusion 
+
+# Appendix
