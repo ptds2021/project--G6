@@ -60,5 +60,27 @@ tm_shape(World) +
 
 # Pour la Shiny: utilisateur peut choisir l'année ?
 
+library(ggplot2)
+library(tidyverse)
+  
+EFProdTotGHA_mr <- data %>% 
+                   filter(record == "EFProdTotGHA" & year == 2016)
+  
+mapdata <- map_data("world") %>%
+           rename(country = region)
+  
+EFProdTotGHA_mr <- left_join(mapdata, 
+                             EFProdTotGHA_mr,
+                             by = "country") 
 
+map <- ggplot(EFProdTotGHA_mr, 
+                mapping = aes(x = long, 
+                              y = lat,
+                              group = group)) +
+    
+    
+       geom_polygon(aes(fill = total))
+
+map
+  
 
