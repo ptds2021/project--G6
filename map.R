@@ -60,8 +60,17 @@ tm_shape(World) +
 
 # Pour la Shiny: utilisateur peut choisir l'année ?
 
+# ------------------------------
+  
 library(ggplot2)
 library(tidyverse)
+library(maps)
+library(dplyr)
+library(ggiraph)
+library(sp)
+library(sf)
+library(plotly)
+
   
 EFProdTotGHA_mr <- data %>% 
                    filter(record == "EFProdTotGHA" & year == 2016)
@@ -73,14 +82,29 @@ EFProdTotGHA_mr <- left_join(mapdata,
                              EFProdTotGHA_mr,
                              by = "country") 
 
-map <- ggplot(EFProdTotGHA_mr, 
+map1 <- ggplot(EFProdTotGHA_mr, 
                 mapping = aes(x = long, 
                               y = lat,
                               group = group)) +
     
+        geom_polygon(aes(fill = total)) +
+  
+        # Plot legends
+        labs(title = "Total Ecological Footprint of Production (in gha) in 2016",
+             subtitle = "Note: grey colored countries have unavailable data",
+             caption = "source: GFN Country Code Concordance Table.csv",
+             fill = "Total Ecological Footprint of Production") +
     
-       geom_polygon(aes(fill = total))
+        # Plot layout 
+        theme(rect = element_blank(),
+              axis.ticks.y = element_blank(),
+              axis.ticks.x = element_blank(),
+              axis.text.y = element_blank(),
+              axis.title.y = element_blank(),
+              axis.title.x = element_blank(),
+              axis.text.x = element_blank()) 
+  
+ggplotly(map1) # modfiy tooltip 
 
-map
   
 
