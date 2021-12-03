@@ -85,7 +85,13 @@ EFProdTotGHA_mr <- left_join(mapdata,
 map1 <- ggplot(EFProdTotGHA_mr, 
                 mapping = aes(x = long, 
                               y = lat,
-                              group = group)) +
+                              group = group, # change NA for a lighter grey colour 
+                              text = paste("Country: ", country,
+                                           "<br>Crop land: ", crop_land,
+                                           "<br>Grazing land: ", grazing_land,
+                                           "<br>Forest land: ", forest_land,
+                                           "<br>Fishing ground: ", fishing_ground,
+                                           "<br>Total: ", total))) +
     
         geom_polygon(aes(fill = total)) +
   
@@ -104,7 +110,8 @@ map1 <- ggplot(EFProdTotGHA_mr,
               axis.title.x = element_blank(),
               axis.text.x = element_blank()) 
   
-ggplotly(map1) # modfiy tooltip 
+ggplotly(map1,
+         tooltip = "text") # modfiy tooltip 
 
   
 
