@@ -7,13 +7,13 @@ library(sp)
 library(sf)
 library(plotly)
 
-  
-EFProdTotGHA_mr <- data %>% 
-                   filter(record == "EFProdTotGHA" & year == 2016)
-  
 mapdata <- map_data("world") %>%
            rename(country = region)
-  
+
+EFProdTotGHA_mr <- data %>% 
+                   filter(record == "EFProdTotGHA" & year == 2016)
+
+# Add coordinates
 EFProdTotGHA_mr <- left_join(mapdata, 
                              EFProdTotGHA_mr,
                              by = "country") 
@@ -49,5 +49,31 @@ map1 <- ggplot(EFProdTotGHA_mr,
 ggplotly(map1,
          tooltip = "text") # modfiy tooltip 
 
+# -------------
+
+country_chosen <- data %>%
+                  select(country, crop_land) %>% # shiny app: user input can choose the second parameter 
+                  filter(country == "Switzerland") # shiny app: user input
+
+country_chosen <- left_join(mapdata,
+                            country_chosen,
+                            by = "country")
+
+map2 <- ggplot(data = country_chosen, 
+               mapping = aes(x = long, 
+                             y = lat, 
+                             group = group)) +
   
+        geom_polygon(aes(fill = crop_land)) + # shiny app: user input
+
+map_anim <- map2 + 
+            transition_time(year) +
+            ggtitle('Year: {frame_time}',
+                    subtitle = 'Frame {frame} of {nframes}')
+
+num_years <- max(country_chosen$year) - min(country_chosen$year) + 1
+
+animate(map_anim, 
+        nframes = num_years)
+
 
