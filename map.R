@@ -52,7 +52,11 @@ map_world %>%
 EFProdTotGHA_mr <- data %>% filter(record == "EFProdTotGHA" & year == 2016)
 
 data("World")
-tm_shape(World) + tm_polygons() + tmap_mode("view") + tm_style("col_blind")
+tm_shape(World) + 
+  tm_polygons() + 
+  tm_shape(EFProdTotGHA_mr)
+  tmap_mode("view") + 
+  tm_style("col_blind")
 
 # Pour la Shiny: utilisateur peut choisir l'année ?
 
