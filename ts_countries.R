@@ -4,32 +4,46 @@ library(tsibble)
 library(fpp3)
 library(reshape2)
 
-
-
-#read data
-data <- read_csv(here::here("data/NFA 2019 public_data.csv"))
+carb_countries_ts <- function(countries_list, record_type, indicator, doforecast, yearforecast){
+  
+  #read data
+  data <- read_csv(here::here("data/NFA 2019 public_data.csv"))
+  
+  
+  # select variables and filter for country and record
+  data_country_ts <- data %>% select(year, country, record , !!indicator) %>% filter(country %in% country_list & record == record_type)
+  
+  
+  
+  
+  data_country_ts <- data_country_ts %>% tsibble(index = year, key = country)%>%mutate(index=as.double(!!indicator))
+  
+  
+  
+  
+  
+  if(doforecast == "No"){
+    #no forecast
+    standard_plot <- data_country_ts %>% autoplot(index)+ggtitle("Time series by country and year")+xlab("year")+ylab(paste0("for record : ", data_country_ts$record[1]))
+    
+    return(standard_plot)
+  }
+  
+  
+  else{
+    #forecast
+    fit <- data_country_ts %>% model(ARIMA(index))
+    
+    forecast_plot<-fit %>% forecast(h = yearforecast) %>% autoplot(data_country_ts)+ggtitle("Time series by country and year")+xlab("year")+ylab(paste0("for record : ", data_country_ts$record[1]))
+    
+    return(forecast_plot)
+  }  
+  
+  
+}
 
 country_list <- list("Switzerland", "Italy","France", "Germany")
 
-# select variables and filter for country and record
-data_country_ts <- data %>% select(year, country, record , crop_land) %>% filter(country %in% country_list & record == "EFProdPerCap")
-
-
-data_country_ts <- data_country_ts %>% tsibble(index = year, key = country) %>% mutate(crop_land = as.double(crop_land))
-
-#no forecast
-data_country_ts %>% autoplot(crop_land)+ggtitle("Time series by country and year")+xlab("year")+ylab(paste0("for record : ", data_country_ts$record[1]))
-
-
-
-
-#forecast
-fit <- data_country_ts %>% model(ARIMA(crop_land))
-
-fit %>% forecast(h = 10) %>% autoplot(data_country_ts)+ggtitle("Time series by country and year")+xlab("year")+ylab(paste0("for record : ", data_country_ts$record[1]))
-  
-  
-
-
+carb_countries_ts(country_list, "BiocapTotGHA", quo(total), "Yes", 30)
 
 
