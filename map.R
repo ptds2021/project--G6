@@ -6,6 +6,7 @@ library(ggiraph)
 library(sp)
 library(sf)
 library(plotly)
+library(gganimate)
 
 mapdata <- map_data("world") %>%
            rename(country = region)
@@ -44,7 +45,8 @@ map1 <- ggplot(EFProdTotGHA_mr,
               axis.text.y = element_blank(),
               axis.title.y = element_blank(),
               axis.title.x = element_blank(),
-              axis.text.x = element_blank()) 
+              axis.text.x = element_blank())  +
+       theme(plot.title = element_text(hjust = 0.5))
   
 ggplotly(map1,
          tooltip = "text") # modfiy tooltip 
@@ -64,7 +66,7 @@ map2 <- ggplot(data = country_chosen,
                              y = lat, 
                              group = group)) +
   
-        geom_polygon(aes(fill = crop_land)) + # shiny app: user input
+        geom_polygon(aes(fill = crop_land))  # shiny app: user input
 
 map_anim <- map2 + 
             transition_time(year) +
