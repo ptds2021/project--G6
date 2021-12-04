@@ -5,12 +5,13 @@ library(shiny)
 shinyUI(fluidPage(
   
   # Application title
-  titlePanel("Sustainability"),
+  titlePanel("Carbcalc"),
   
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
+    
     sidebarPanel(
-      
+       
        # Input: Selector for countriy information to plot 
        selectInput("country", "Choose a country:",
                    c(unique(data$country)),
