@@ -10,19 +10,23 @@ library(gganimate)
 library(transformr)
 library(readr)
 
+# Creat a data frame of map data 
 mapdata <- map_data("world") %>%
            rename(country = region)
 
+# Import our data
 data <- read_csv(here::here("data/NFA 2019 public_data.csv"))
 
+# Create a subset of our data
 EFProdTotGHA_mr <- data %>%
                    filter(record == "EFProdTotGHA" & year == 2016)
 
-# Add coordinates
+# Add coordinates to our data 
 EFProdTotGHA_mr <- left_join(mapdata,
                              EFProdTotGHA_mr,
                              by = "country")
 
+# Plot the map
 map1 <- ggplot(EFProdTotGHA_mr,
                 mapping = aes(x = long,
                               y = lat,
