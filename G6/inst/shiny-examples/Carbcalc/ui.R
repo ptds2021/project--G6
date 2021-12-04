@@ -1,5 +1,5 @@
 library(shiny)
-library(Carbcalc)
+library(G6)
 
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
