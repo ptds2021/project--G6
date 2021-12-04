@@ -8,6 +8,7 @@ library(sf)
 library(plotly)
 library(gganimate)
 library(transformr)
+library(readr)
 
 mapdata <- map_data("world") %>%
            rename(country = region)
