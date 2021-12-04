@@ -11,29 +11,33 @@ library(ggplot2)
 sustainability <- function(countries_select) {
   
 
-data<- read_csv("data/NFA 2019 public_data.csv")
+data <- read_csv("data/NFA 2019 public_data.csv")
 
 ## Creation 
-sustain <- data %>% filter(record == "BiocapPerCap" | record == "EFConsPerCap") %>% group_by(year, country) %>% summarise(sustainablity = - diff(total))
+sustain <- data %>% 
+           filter(record == "BiocapPerCap" | record == "EFConsPerCap") %>% 
+           group_by(year, country) %>% 
+           summarise(sustainablity = - diff(total))
 
+sustbycountry <- filter(sustain, 
+                        country %in% countries_select)
 
-
-Sbycountry <- filter(sustain, country %in% countries_select)
-
-plot_countries <- ggplot(Sbycountry, mapping = aes(x = year, 
-                                                   y = sustainablity, fill=factor(country))) +
-  geom_bar(stat = "identity",position="dodge") + 
-  labs(title = "Sustainability per year by country")
-
+plot_countries <- ggplot(sustbycountry, 
+                         mapping = aes(x = year, 
+                                       y = sustainablity, 
+                                       fill = factor(country))) +
+  
+                  # Create bar plot
+                  geom_bar(stat = "identity",
+                           position = "dodge") + 
+  
+                  labs(title = "Sustainability by country per year")
 
 return(plot_countries)
 
 }
 
 countries <- list("China","Germany","India")
-
-
-
 
 sustainability(countries)
 
