@@ -42,8 +42,8 @@ carb_countries_ts <- function(countries_list, record_type, indicator, doforecast
   
 }
 
-country_list <- list("Switzerland", "Italy","France", "Germany")
+country_list <- list("Spain", "Italy","France", "Germany","Switzerland")
 
-carb_countries_ts(country_list, "BiocapTotGHA", quo(total), "Yes", 30)
+carb_countries_ts(country_list, "EFProdTotGHA", quo(fishing_ground), "No", 10)
 
 
