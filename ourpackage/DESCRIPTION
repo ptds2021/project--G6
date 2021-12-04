@@ -10,6 +10,7 @@ Authors@R: c(
 Maintainer: Colin Steffe <colin.steffe@unil.ch>
 Description:
 License: MIT + file LICENSE
+Imports: shiny (>= 1.7.1)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
