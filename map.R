@@ -54,8 +54,8 @@ ggplotly(map1,
 # -------------
 
 country_chosen <- data %>%
-                  select(country, crop_land) %>% # shiny app: user input can choose the second parameter 
-                  filter(country == "Switzerland") # shiny app: user input
+                  select(country, crop_land, year, record) %>% # shiny app: user input can choose the second parameter 
+                  filter(country == "Switzerland" & record == "EFProdTotGHA") # shiny app: user input
 
 country_chosen <- left_join(mapdata,
                             country_chosen,
