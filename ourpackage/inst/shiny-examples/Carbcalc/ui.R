@@ -12,9 +12,8 @@ shinyUI(fluidPage(
       
        # Input: Selector for countriy information to plot 
        selectInput("country", "Choose a country:",
-                   c("Country 1:", data$country,
-                     "Country 2:", data$country,
-                     "Country 3:", data$country)) # add here vector of country with names
+                   c(data$country),
+                   multiple = TRUE) # add here vector of country with names
                    
     ),
     
