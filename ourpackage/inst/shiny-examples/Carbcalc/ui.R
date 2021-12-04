@@ -4,21 +4,23 @@ library(shiny)
 shinyUI(fluidPage(
   
   # Application title
-  titlePanel("Old Faithful Geyser Data"),
+  titlePanel("Sustainability"),
   
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
-       sliderInput("bins",
-                   "Number of bins:",
-                   min = 1,
-                   max = 50,
-                   value = 30)
+      
+       # Input: Selector for countriy information to plot 
+       selectInput("country", "Choose a country:",
+                   c("Country 1:", data$country,
+                     "Country 2:", data$country,
+                     "Country 3:", data$country)) # add here vector of country with names
+                   
     ),
     
     # Show a plot of the generated distribution
     mainPanel(
-       plotOutput("distPlot")
+       plotOutput("Sustainibility plot")
     )
   )
 ))
