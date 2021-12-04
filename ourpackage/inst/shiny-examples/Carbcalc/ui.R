@@ -1,4 +1,5 @@
 library(shiny)
+library(Carbcalc)
 
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
@@ -12,7 +13,7 @@ shinyUI(fluidPage(
       
        # Input: Selector for countriy information to plot 
        selectInput("country", "Choose a country:",
-                   c(data$country),
+                   c(unique(data$country)),
                    multiple = TRUE) # add here vector of country with names
                    
     ),

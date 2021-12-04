@@ -5,7 +5,7 @@ shinyServer(function(input, output) {
    
     # Generate a plot to show the sustainability of the chosen country 
     output$`Sustainibility plot` <- renderPlot({
-      sustainibility(input$country)
+      sustainability(input$country)
   })
   
 })
