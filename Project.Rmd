@@ -1,8 +1,13 @@
 ---
-title: "Final Project: Carbon Emissions by Coutry and by Year"
-author: Daniel Welz, Guillaume Bilocq, Jasmine Mawjee, Virany Kho, Colin Steffe
-date: 
-output: html_document
+title: "Ecological Footprint by Coutry and by Year"
+author: "from Daniel Welz, Guillaume Bilocq, Jasmine Mawjee, Virany Kho, Colin Steffe"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    theme: united
+    highlight: tango
+    toc: true
+    toc_float: true
 ---
 
 ```{r data importation, echo=F, warning=F, message=F}
@@ -57,68 +62,41 @@ The app aims to to have an impact on three different levels. First, the individu
   
 # Data description 
 
-In this section we go over 
-The 2019 edition of the National Footprint and Biocapacity Accounts was produced, for the very first time, under the close observation of the team at York University’s Faculty of Environmental Studies (FES) who is part of the Ecological Footprint Initiative. Going forward, the Ecological Footprint Initiative team in Toronto will be entrusted with producing National Footprint and Biocapacity Accounts data with the support of Global Footprint Network, in the context of the partnership created in 2018 by both organizations with a view to ensuring ever more robust and transparent data in the future. [Source: https://data.world/footprint/nfa-2019-edition]
+The data set we use comes from the 2019 edition of the *National Footprint and Biocapacity Accounts* which is supervised by a team at York University’s Faculty of Environmental Studies (FES) who is part of the Ecological Footprint Initiative.
 
-The NFA 2019 public dataset has overall 12 columns and  72,186 rows. First the column names are provided and described. 
+In this section, we go over the variables of the data set to better understand their meaning. The (public) data set has 12 variables and provide information on 72,186 observations on 192 countries:
 
-  + **country**: This column provides the countries of the world (Afganisthan - Zimbabwe) and also data for the world as a whole.
+  + **country**: Provides the name of the country under focus
   
-  + **Year**: For each country data is provided from 1961 until 2016. Of course, here are some outliers as Armenia (which was founded in 1991) and thus the data starts with 1992 for this specific case. 
+  + **Year**: For each country data is provided for 55 years, from 1961 until 2016. Some countries have less observation since founded after 1961 (e.g. Armenia in 1991).
     
-  + **country_code**: Numerical code per country ranging from 1 to 5001
+  + **country_code**: Country numerical identifier
   
-  + **record**: For each year and for each country, eight different record are made per year.
-      1. **AreaPerCap**: Area divided divided by population
-      2. **AreaTotHA**: Total area in hectares (ha)
-      3. **BiocapPerCap**: Biocapacity in global hectares (gha) divided by population
-      4. **BiocapTotGHA**: Total biocapacity in global hectares (gha)
-      5. **EFConsPerCap**: Ecological Footprint of consumption in global hectares (gha) divided by population
-      6. **EFConsTotGHA**: Total Ecological Footprint of consumption in global hectares (gha)
-      7. **EFProdPerCap**: Ecological Footprint of production in global hectares (gha) divided by population
-      8. **EFProdTotGHA**: Total Ecological Footprint of production in global hectares (gha)
+  + **record**: For each year and for each country, eight different records are made.
+      1. **AreaPerCap**: Area divided by population
+      2. **AreaTotHA**: Total area in hectare (ha)
+      3. **BiocapPerCap**: Biocapacity (in gha) divided by population
+      4. **BiocapTotGHA**: Total biocapacity (in gha)
+      5. **EFConsPerCap**: Ecological Footprint of consumption (in gha) divided by population
+      6. **EFConsTotGHA**: Total Ecological Footprint of consumption (in gha)
+      7. **EFProdPerCap**: Ecological Footprint of production (in gha) divided by population
+      8. **EFProdTotGHA**: Total Ecological Footprint of production (in gha)
       
-  + **crop_land**: The cropland Footprint reflects the amount of land necessary to grow all crops consumed by humans 
-and livestock. This includes agricultural products, market animal feed, and cropped grasses used as 
-livestock feed.  
+  + **crop_land**: The cropland Footprint provides the amount of land necessary to grow all crops consumed by humans and livestock (includes agricultural products, market animal feed, and cropped grasses used as livestock feed).  
 
-  + **grazing_land**: The grazing land Footprint assesses demand for grazing land to feed livestock and the embodied 
-demand for grazing land in traded goods. The calculations estimate the total feed requirements of all livestock produced and the percentage of 
-livestock energy requirements derived from concentrate feeds, forage crops, and crop residues. The 
-difference between total feed requirement and total cropped feed supply is taken to equal the 
-demand for grazing land.  
-
-  + **forest_land**: The forest products Footprint assesses human demand for the products of the world’s forests. The 
-forest products Footprint of production is comprised of two broad types of primary product: wood 
-used for fuel; and timber and pulp used as a raw material to produce derived wood products. The forest products Footprint represents the area of world average forest land needed to supply wood for fuel, construction, and paper. To calculate the Footprint of forest products, timber harvests are 
-compared against the net annual growth rates of the world’s forests. Global and country specific forest 
-yields (i.e., net annual increments) are drawn from a combination of sources.
+  + **grazing_land**: The grazing land Footprint assesses demand for grazing land to feed livestock and the demand for grazing land in traded goods. 
   
-  + **fishing_ground**: The Fishing Grounds Footprint represents the demands of fisheries on aquatic ecosystems as the 
-equivalent surface area required to sustainably support a country’s catch. The Fishing Grounds Footprint is calculated by 
-dividing the amount of primary production consumed by an aquatic species over its lifetime by an estimate of the harvestable primary production per 
-hectare of marine area.
+  + **forest_land**: The forest products Footprint assesses human demand for the products of the world’s forests, wood used for fuel and timber and pulp used to produce derived wood products.
   
-  + **built_up_land**: The built-up land Footprint represents bioproductive land that has been physically occupied by human 
-activities. The NFA tracks infrastructure areas required for housing, transportation, and 
-industrial production. The calculations assume that infrastructure area covers former cropland, and 
-apply the yield and equivalence factors for cropland to the calculation of the Footprint. 
+  + **fishing_ground**: The fishing ground Footprint represents the demands of fisheries on aquatic ecosystems. It is calculated by dividing the amount of primary production consumed by an aquatic specy over its lifetime by an estimate of the harvestable primary production per hectare of marine area.
   
-  + **carbon**: The carbon Footprint represents the area of forest land required to sequester anthropogenic carbon 
-dioxide emissions. The NFA calculates the Footprint of carbon dioxide emissions using 
-several parameters including domestic fossil fuel combustion and electricity use, embodied carbon in 
-traded items and electricity, a country’s share of global international transport emissions, and non-
-fossil-fuel sources. The total amount of carbon dioxide allocated to each country is converted into global hectares 
-based on the Footprint intensity of carbon. This conversion factor is derived from the following: 
-
-    • the yield of the productive land that is required to absorb the carbon dioxide emissions 
-    • the amount of carbon absorbed by oceans 
-    • an equivalence factor for carbon as a land type 
-    • an adjustment factor for temporal changes in yield from the forest 
+  + **built_up_land**: The built-up land Footprint represents bioproductive land that has been physically occupied by human activities (e.g. infrastructure areas required for housing, transportation, industrial production). 
   
-  + **total**: 
+  + **carbon**: The carbon Footprint represents the area of forest land required to sequester anthropogenic carbon dioxide emissions (e.g. domestic fossil fuel combustion, electricity use, embodied carbon in traded items and electricity, transport emissions, and non-fossil-fuel sources).
   
-  + **Qscore**: Quality of overall country data as assessed by NFA researchers. National Footprint and Biocapacity Accounts use internationally available data from multiple datasets for all countries for each year going back to 1961. In some cases data may be limited, unavailable, or may contain apparent errors. While the accounts include some data error improvement and estimation of missing data, results for countries and/or years are inevitably of variable reliability. As part of the completion of each edition of the National Footprint and Biocapacity Accounts, Global Footprint Network researchers assess a level of confidence in the final results for each country [More information: https://www.footprintnetwork.org/data-quality-scores/]
+  + **total**: Total Footprint (i.e. sum of carbon, built-up land, fishing ground, forest land, grazing land and crop land Footprint)
+  
+  + **Qscore**: Quality of overall country data. The National Footprint and Biocapacity Accounts uses internationally available data from multiple data sets for all countries for each year going back to 1961. 
   
 Citation: 
 Here is a suggested citation: Global Footprint Network National Footprint and Biocapacity Accounts, 2021 Edition Downloaded [today's date] from https://data.footprintnetwork.org.
@@ -132,6 +110,10 @@ To first have an overall view of the impact of production on the world ecologica
 According to the below map of the world, we see that the country which has the highest impact on the environment in terms of total production (considering the countries for which we have data) is China with 4,909,131,874 gha. This observation could potentially be explained by two facts. The fist one could be the Chinese production/consumption culture relying on a fast-paced production (e.g. fast-fashion) but also on globalization and countries urge to produce at very low costs therefore migrating production to China. 
       
 ```{r map total footprint, echo=F, warning=F, message=F}
+
+library(tidyverse)
+library(dplyr)
+library(plotly)
 
 # Create a data frame of map data 
 mapdata <- map_data("world") %>%
