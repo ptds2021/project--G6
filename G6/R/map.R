@@ -12,6 +12,12 @@ library(readr)
 
 # ------------------------------------------------------
 
+data <- read_csv(here::here("NFA 2019 public_data.csv"))
+
+# Create a data frame of map data
+mapdata <- map_data("world") %>%
+           rename(country = region)
+
 country_chosen <- data %>%
                   select(country, crop_land, year, record) %>% # shiny app: user input can choose the second parameter
                   filter(country == "Switzerland" & record == "EFProdTotGHA") # shiny app: user input
