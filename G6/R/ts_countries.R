@@ -12,30 +12,36 @@ carb_countries_ts <- function(countries_list, record_type, indicator, doforecast
 
 
   # select variables and filter for country and record
-  data_country_ts <- data %>% select(year, country, record , !!indicator) %>% filter(country %in% country_list & record == record_type)
+  data_country_ts <- data %>%
+                     select(year, country, record , !!indicator) %>%
+                     filter(country %in% country_list & record == record_type)
 
 
-
-
-  data_country_ts <- data_country_ts %>% tsibble(index = year, key = country)%>%mutate(index=as.double(!!indicator))
-
-
-
-
+  data_country_ts <- data_country_ts %>%
+                     tsibble(index = year, key = country) %>%
+                     mutate(index=as.double(!!indicator))
 
   if(doforecast == "No"){
     #no forecast
-    standard_plot <- data_country_ts %>% autoplot(index)+ggtitle("Time series by country and year")+xlab("year")+ylab(paste0("for record : ", data_country_ts$record[1]))
+    standard_plot <- data_country_ts %>%
+                     autoplot(index) +
+                     ggtitle("Time series by country and year") +
+                     xlab("year") +
+                     ylab(paste0("for record : ", data_country_ts$record[1]))
 
     return(standard_plot)
   }
 
-
   else{
     #forecast
-    fit <- data_country_ts %>% model(ARIMA(index))
+    fit <- data_country_ts %>%
+           model(ARIMA(index))
 
-    forecast_plot<-fit %>% forecast(h = yearforecast) %>% autoplot(data_country_ts)+ggtitle("Time series by country and year")+xlab("year")+ylab(paste0("for record : ", data_country_ts$record[1]))
+    forecast_plot < -fit %>%
+                     forecast(h = yearforecast) %>%
+                     autoplot(data_country_ts) +
+                     ggtitle("Time series by country and year")+xlab("year") +
+                     ylab(paste0("for record : ", data_country_ts$record[1]))
 
     return(forecast_plot)
   }
