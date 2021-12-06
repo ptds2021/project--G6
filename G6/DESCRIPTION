@@ -8,7 +8,7 @@ Authors@R: c(
     person("Daniel", "Welz", email = "daniel.welz@unil.ch", role = "aut"),  
     person("Jasmine", "Mawjee", email = "jasmine.mawjee@unil.ch", role = "aut"))
 Maintainer: Colin Steffe <colin.steffe@unil.ch>
-Description:
+Description: This package provides functions to study the ecological footprint of some countries around the world
 License: MIT + file LICENSE
 Imports: shiny (>= 1.7.1)
 Encoding: UTF-8
