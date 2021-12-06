@@ -41,3 +41,4 @@ vignettes/*.pdf
 # Remove Mac OS .DS_store
 **/.DS_Store
 .Rproj.user
+*.png
