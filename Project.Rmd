@@ -177,6 +177,13 @@ ggplotly(map1,
 3) How did we create the shiny app ? what packages used and fucntions ?
 
 # Website
+
+```{r website creation, echo=F, message=F, warning=F}
+
+library(blogdown)
+
+```
+
 1) What do we find on the website
 2) How did we create it (steps)? and what packages we used ?
 
