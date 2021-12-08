@@ -1,0 +1,40 @@
+---
+title: "Plot_Stats"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Plot_Stats}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(G6)
+sustainability
+```
+
+## Plot and stats
+
+The purpose of the function "Plot and Stats" is to compute the "sustainability score" that we defined as the difference between Biocapacity per Capita of a country and the Ecological Footrpint of Consumption per Capita.
+
+If the score is negative, it means that the country consume more resources than the land is able to provide to the country. 
+
+The data are retrieved from the NFA 2019 public_data file that we can find in the National Futures Association website. 
+
+### Functioning 
+
+From the dataset, we 
+
+1. Filter the dataset to get only the BiocapPerCap & EFConsPerCap data, 
+1. Group these data by country and by year, 
+1. Create the sustainability column
+
+After these steps, we are able to plot the Sustainability by country and by year, to have a visual of the sustainability value of each country. 
+
+### Shiny App

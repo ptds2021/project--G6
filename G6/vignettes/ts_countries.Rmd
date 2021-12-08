@@ -1,0 +1,29 @@
+---
+title: "ts_countries"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ts_countries}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(G6)
+ts_countries
+```
+
+##Ts_Countries
+
+The function plot Times Series of countries ecological footprints, to observe its evolution over time.
+It also make forecasts for a duration defined by the user. 
+
+### Functioning 
+
+### Shiny app
