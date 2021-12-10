@@ -6,9 +6,9 @@
 
 worldmap <- function(country_selected, indicator, record_chosen) {
 
+  library(dplyr)
 
-  
-  data <- read_csv(here::here("NFA 2019 public_data.csv"))
+  data <- readr::read_csv(here::here("NFA 2019 public_data.csv"))
 
 # Create a data frame of map data
 mapdata <- ggplot2::map_data("world") %>%
@@ -40,7 +40,7 @@ num_years <- max(subset_country2$year) - min(subset_country2$year) + 1
 
 gganimate::animate(map_anim,
         nframes = num_years)
- 
+
 
 }
 
