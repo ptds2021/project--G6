@@ -1,11 +1,11 @@
 
-
 map_overview <- function(record_type){
 
   library(tidyverse)
   library(dplyr)
   library(plotly)
 
+  data <- readr::read_csv(here::here("NFA 2019 public_data.csv"))
   # Create a data frame of map data
   mapdata <- map_data("world") %>%
              rename(country = region)
@@ -15,7 +15,7 @@ map_overview <- function(record_type){
                      filter(record == record_type & year == 2016)
 
   # Add coordinates to our data
-  EFProdTotGHA_mr <- left_join(mapdata,
+  data_mostrecent <- left_join(mapdata,
                                data_mostrecent,
                                by = "country")
 
@@ -54,3 +54,6 @@ map_overview <- function(record_type){
            tooltip = "text")
 
 }
+
+
+
