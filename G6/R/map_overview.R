@@ -6,13 +6,14 @@ map_overview <- function(record_type){
   library(plotly)
 
   data <- readr::read_csv(here::here("NFA 2019 public_data.csv"))
+
   # Create a data frame of map data
   mapdata <- map_data("world") %>%
              rename(country = region)
 
   # Create a subset of our data
   data_mostrecent <- data %>%
-                     filter(record == record_type & year == 2016)
+                     filter(record %in% record_type & year == 2016)
 
   # Add coordinates to our data
   data_mostrecent <- left_join(mapdata,
@@ -50,8 +51,8 @@ map_overview <- function(record_type){
 
     theme(plot.title = element_text(hjust = 0.5))
 
-  ggplotly(map1,
-           tooltip = "text")
+  return(ggplotly(map1,
+                  tooltip = "text"))
 
 }
 

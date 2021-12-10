@@ -16,12 +16,16 @@ shinyUI(fluidPage(
   # Add toc
   navlistPanel(
     id = "tabset",
+    tabPanel("World Overview",
+             selectInput("record", "Choose a record type:",
+                         c(unique(data$record)),
+                         multiple = FALSE),
+             plotOutput("Map Overview")),
     tabPanel("Plot1",
              selectInput("country", "Choose a country:",
                          c(unique(data$country)),
                          multiple = TRUE),
              plotOutput("Sustainibility plot")),
-    tabPanel("panel 2", "Panel two contents"),
     tabPanel("panel 3", "Panel three contents")
     )
   )

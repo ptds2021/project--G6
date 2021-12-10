@@ -11,4 +11,8 @@ shinyServer(function(input, output) {
     sustainability(input$country)
   })
 
+  output$`Map Overview` <- renderPlot({
+    map_overview(input$record)
+  })
+
 })
