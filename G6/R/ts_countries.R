@@ -9,7 +9,11 @@
 #' @examples
 #' country_list <- list("Spain", "Italy","France", "Germany","Switzerland")
 #' carb_countries_ts(country_list, "EFProdTotGHA", quo(fishing_ground), "No", 10)
+
+
+
 carb_countries_ts <- function(countries_list, record_type, indicator, doforecast, yearforecast){
+  library(fpp3)
 
   #read data
   data <- readr::read_csv(here::here("NFA 2019 public_data.csv"))
@@ -17,13 +21,14 @@ carb_countries_ts <- function(countries_list, record_type, indicator, doforecast
 
   # select variables and filter for country and record
   data_country_ts <- data %>%
-                     dplyr::select(year, country, record , !!indicator) %>%
-                     dplyr::filter(country %in% country_list & record == record_type)
+                     dplyr::select(year, country, record , {{indicator}}) %>%
+                     dplyr::filter(country %in% countries_list & record == record_type)
+
 
 
   data_country_ts <- data_country_ts %>%
                      tsibble::tsibble(index = year, key = country) %>%
-                     dplyr::mutate(index=as.double(!!indicator))
+                     dplyr::mutate(index= as.double(data_country_ts[[indicator]]))
 
   if(doforecast == "No"){
     #no forecast
@@ -41,7 +46,7 @@ carb_countries_ts <- function(countries_list, record_type, indicator, doforecast
     fit <- data_country_ts %>%
            model(ARIMA(index))
 
-    forecast_plot < -fit %>%
+    forecast_plot <- fit %>%
                      forecast(h = yearforecast) %>%
                      autoplot(data_country_ts) +
                      ggplot2::ggtitle("Time series by country and year") +
@@ -53,4 +58,6 @@ carb_countries_ts <- function(countries_list, record_type, indicator, doforecast
 
 
 }
+
+
 
