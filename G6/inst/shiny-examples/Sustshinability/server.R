@@ -1,5 +1,5 @@
 library(shiny)
-library(G6)
+#library(G6)
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
@@ -15,8 +15,8 @@ shinyServer(function(input, output) {
     map_overview(input$record)
   })
   
-  output$timeseries <- renderPlot({
-    carb_countries_ts(input$country, input$record, input$indicator, input$doforecast, input$yearforecast)
+  output$Timeseries <- renderPlot({
+    carb_countries_ts(input$countries_ts, input$record_ts, input$indicator_ts, input$doforecast, input$yearforecast)
   })
   
 

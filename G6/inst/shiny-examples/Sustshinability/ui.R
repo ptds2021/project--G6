@@ -26,14 +26,14 @@ shinyUI(fluidPage(
                          c(unique(data$country)),
                          multiple = TRUE),
              plotOutput("Sustainibility plot")),
-    tabPanel("timeseries",
-             selectInput("country","choose a country:",
+    tabPanel("Timeseries",
+             selectInput("countries_ts","choose countries:",
                          c(unique(data$country)),
                          multiple = TRUE),
-             selectInput("record", "Choose a record type:",
+             selectInput("record_ts", "Choose a record type:",
                          c(unique(data$record)),
                          multiple = FALSE),
-             selectInput("indicator", "Choose an indicator:",
+             selectInput("indicator_ts", "Choose an indicator:",
                          c("crop_land","grazing_land","forest_land","fishing_ground","built_up_land","carbon","total"),
                          multiple = FALSE),
              selectInput("doforecast", "Choose to forcast:",
@@ -44,6 +44,7 @@ shinyUI(fluidPage(
                          min = 1,
                          max = 50,
                          value = 30),
+             plotOutput("Timeseries")
     )
                          
     )
