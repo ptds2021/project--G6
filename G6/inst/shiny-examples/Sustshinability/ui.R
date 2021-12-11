@@ -26,7 +26,26 @@ shinyUI(fluidPage(
                          c(unique(data$country)),
                          multiple = TRUE),
              plotOutput("Sustainibility plot")),
-    tabPanel("panel 3", "Panel three contents")
+    tabPanel("timeseries",
+             selectInput("country","choose a country:",
+                         c(unique(data$country)),
+                         multiple = TRUE),
+             selectInput("record", "Choose a record type:",
+                         c(unique(data$record)),
+                         multiple = FALSE),
+             selectInput("indicator", "Choose an indicator:",
+                         c("crop_land","grazing_land","forest_land","fishing_ground","built_up_land","carbon","total"),
+                         multiple = FALSE),
+             selectInput("doforecast", "Choose to forcast:",
+                         c("Yes","No"),
+                         multiple = FALSE),
+             sliderInput(inputId = "yearforecast",
+                         label = "Number of years to forecast:",
+                         min = 1,
+                         max = 50,
+                         value = 30),
+    )
+                         
     )
   )
 )

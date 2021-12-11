@@ -14,5 +14,10 @@ shinyServer(function(input, output) {
   output$`Map Overview` <- renderPlot({
     map_overview(input$record)
   })
+  
+  output$timeseries <- renderPlot({
+    carb_countries_ts(input$country, input$record, input$indicator, input$doforecast, input$yearforecast)
+  })
+  
 
 })
