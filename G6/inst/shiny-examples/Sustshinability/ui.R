@@ -45,6 +45,29 @@ shinyUI(fluidPage(
                          max = 50,
                          value = 30),
              plotOutput("Timeseries")
+    ),
+    tabPanel("Statistics",
+             selectInput("countries_st","choose countries:",
+                         c(unique(data$country)),
+                         multiple = TRUE),
+             selectInput("record_st", "Choose a record type:",
+                         c(unique(data$record)),
+                         multiple = FALSE),
+             selectInput("indicator_st", "Choose an indicator:",
+                         c("crop_land","grazing_land","forest_land","fishing_ground","built_up_land","carbon","total"),
+                         multiple = FALSE),
+             selectInput(
+               inputId =  "start_year", 
+               label = "Select start of the period", 
+               choices = 1961:2016
+             ),
+             selectInput(
+               inputId =  "end_year", 
+               label = "Select end of the period", 
+               choices = 1961:2016
+             ),
+
+             tableOutput("Statistics")
     )
                          
     )
