@@ -19,5 +19,9 @@ shinyServer(function(input, output) {
     carb_countries_ts(input$countries_ts, input$record_ts, input$indicator_ts, input$doforecast, input$yearforecast)
   })
   
+  output$Statistics <- renderTable({
+    display_stats(input$countries_st, input$record_st, input$indicator_st, input$year_range)
+  })
+  
 
 })
