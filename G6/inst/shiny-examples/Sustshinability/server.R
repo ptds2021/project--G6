@@ -16,14 +16,13 @@ shinyServer(function(input, output) {
   })
 
   output$Timeseries <- renderPlot({
-    carb_countries_ts(input$countries_ts, input$record_ts, input$indicator_ts, input$doforecast, input$yearforecast)
+    timeseries(input$countries_ts, input$record_ts, input$indicator_ts, input$doforecast, input$yearforecast)
   })
 
-  
   output$Statistics <- renderTable({
     display_stats(input$countries_st, input$record_st, input$indicator_st, (input$start_year:input$end_year))
   })
-  
+
 
 
 })

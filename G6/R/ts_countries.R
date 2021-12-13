@@ -9,9 +9,9 @@
 #' @export
 #' @examples
 #' country_list <- list("Spain", "Italy","France", "Germany","Switzerland")
-#' carb_countries_ts(country_list, "EFProdTotGHA", quo(fishing_ground), "No", 10)
+#' timeseries(country_list, "EFProdTotGHA", quo(fishing_ground), "No", 10)
 
-carb_countries_ts <- function(countries_list, record_type, indicator, doforecast, yearforecast){
+timeseries <- function(countries_list, record_type, indicator, doforecast, yearforecast){
 
   #read data
   data <- readr::read_csv(here::here("NFA 2019 public_data.csv"))
