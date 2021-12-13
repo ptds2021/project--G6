@@ -7,9 +7,9 @@
 #' @return A table of statistics
 #' @export
 #' @examples
-#' display_stats(c("France", "Switzerland", "World"), "AreaPerCap", "crop_land", (1990:2010))
+#' G6_stats(c("France", "Switzerland", "World"), "AreaPerCap", "crop_land", (1990:2010))
 
-display_stats <- function (countries_list, record_type, indicator, year_range){
+G6_stats <- function (countries_list, record_type, indicator, year_range){
 
   data <- readr::read_csv(here::here("NFA 2019 public_data.csv"))
 
@@ -128,6 +128,6 @@ display_stats <- function (countries_list, record_type, indicator, year_range){
   }
 }
 
-print(display_stats(c("France", "Switzerland", "World"),"AreaPerCap", "crop_land",(1990:2010)))
+print(G6_stats(c("France", "Switzerland", "World"),"AreaPerCap", "crop_land",(1990:2010)))
 
 
