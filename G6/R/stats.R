@@ -1,4 +1,13 @@
-
+#' @title Statistics
+#' @description The function returns a kable displaying statistics for selected country/ies, record type, production surface area's type and selected period. The statistics displayed are the minimum, median, mean, standard deviation, maximum, evolution and world proportion.  
+#' @param countries_list List of countries chosen by the user.
+#' @param record_type Record chosen by the user.
+#' @param indicator Indicator selected by the user (crop land, grazing land, forest land, fishing ground, built-up land, carbon and total).
+#' @param year_range Period over which the statistics are given.
+#' @return A table of statistics
+#' @export
+#' @examples
+#' display_stats(c("France", "Switzerland", "World"),"AreaPerCap", "crop_land",(1990:2010))
 
 display_stats <- function (countries_list, record_type, indicator, year_range){
 library(dplyr)
@@ -24,10 +33,10 @@ if ("World" %in% countries_list){
   data_stats$indicator<- as.numeric(as.character(data_stats$indicator))
   
   # filter by year range
-  data_stats <- data_stats %>% filter (year %in% year_range)
+  data_stats <- data_stats %>% dplyr::filter (year %in% year_range)
   
   # compute the value of all countries for comparison
-  global <- data %>% dplyr::select(year, country, record , {{indicator}}) %>% filter (year %in% year_range)
+  global <- data %>% dplyr::select(year, country, record , {{indicator}}) %>% dplyr::filter (year %in% year_range)
 
   
   colnames(global)<- c("year", "country", "record", "indicator")
@@ -39,7 +48,7 @@ if ("World" %in% countries_list){
   total_countries <- sum (global$indicator,na.rm = TRUE)
   
   # compute the mean for the world
-  mean_world <- data_stats %>% filter (country == "World")
+  mean_world <- data_stats %>% dplyr::filter (country == "World")
   mean_world <-  mean(mean_world$indicator)
   
   # group by country and compute all the statistics
@@ -70,11 +79,11 @@ else { # won't display world, because it isn't selected by the user
   
   
   # filter by year range
-  data_stats <- data_stats %>% filter (year %in% year_range)
+  data_stats <- data_stats %>% dplyr::filter (year %in% year_range)
   
   # compute the value of all countries for comparison
   # compute the value of all countries for comparison
-  global <- data %>% dplyr::select(year, country, record , {{indicator}}) %>% filter (year %in% year_range)
+  global <- data %>% dplyr::select(year, country, record , {{indicator}}) %>% dplyr::filter (year %in% year_range)
   
   
   colnames(global)<- c("year", "country", "record", "indicator")
@@ -87,22 +96,19 @@ else { # won't display world, because it isn't selected by the user
   
   
   # compute the mean for the world
-  mean_world <- data_stats %>% filter (country == "World")
+  mean_world <- data_stats %>% dplyr::filter (country == "World")
   mean_world <-  mean(mean_world$indicator)
   
   # group by country and compute all the statistics
   summary <- data_stats %>% group_by(country) %>% summarise (min = min(indicator), median = median(indicator), mean = mean(indicator), sd = sd(indicator), max = max (indicator), total = sum (indicator, na.rm = TRUE), evolution = ((last(indicator)-first(indicator))/first(indicator))*100, world_proportion = mean(indicator)/mean_world, represent_globaly = total/total_countries )
   # remove world because it was not selected
-  summary <- summary %>% filter (country != "World")
+  summary <- summary %>% dplyr::filter (country != "World")
   
   return(summary)
 }
 
 }
 
-# need to return a kable so it looks better
-# https://cran.r-project.org/web/packages/kableExtra/vignettes/use_kable_in_shiny.html
 
-print(display_stats(c("France", "Switzerland", "World"),"AreaPerCap", "crop_land",(1990:2010)))
 
 
