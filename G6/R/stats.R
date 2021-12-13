@@ -30,7 +30,7 @@ if ("World" %in% countries_list){
   mean_world <- data_stats %>% filter (country == "World")
   mean_world <-  mean(mean_world$indicator)
   
-  summary <- data_stats %>% group_by(country) %>% summarise (min = min(indicator), median = median(indicator), mean = mean(indicator), sd = sd(indicator), max = max (indicator), world_proportion = mean(indicator)/mean_world )
+  summary <- data_stats %>% group_by(country) %>% summarise (min = min(indicator), median = median(indicator), mean = mean(indicator), sd = sd(indicator), max = max (indicator), evolution = ((last(indicator)-first(indicator))/first(indicator))*100, world_proportion = mean(indicator)/mean_world )
   
   return(summary)
 }
@@ -63,7 +63,7 @@ else { # won't display world, because it isn't selected by the user
   mean_world <- data_stats %>% filter (country == "World")
   mean_world <-  mean(mean_world$indicator)
   
-  summary <- data_stats %>% group_by(country) %>% summarise (min = min(indicator), median = median(indicator), mean = mean(indicator), sd = sd(indicator), max = max (indicator), world_proportion = mean(indicator)/mean_world )
+  summary <- data_stats %>% group_by(country) %>% summarise (min = min(indicator), median = median(indicator), mean = mean(indicator), sd = sd(indicator), max = max (indicator), evolution = ((last(indicator)-first(indicator))/first(indicator))*100, world_proportion = mean(indicator)/mean_world )
   
   # remove world because it was not selected
   summary <- summary %>% filter (country != "World")
