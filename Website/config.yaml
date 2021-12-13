@@ -88,3 +88,8 @@ Languages:
           weight: 30
     title: Hugo 主题的 Learn 文档
     weight: 3
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
