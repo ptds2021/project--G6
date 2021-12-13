@@ -11,8 +11,8 @@ worldmap_overview <- function(record_type){
   data <- readr::read_csv(here::here("NFA 2019 public_data.csv"))
 
   # Create a data frame of map data
-  mapdata <- map_data("world")
-  mapdata <- plyr::rename(mapdata, country = region)
+  mapdata <- ggplot2::map_data("world")
+  mapdata <- dplyr::rename(mapdata, country = region)
 
   # Create a subset of our data
   data_mostrecent <- data %>%
