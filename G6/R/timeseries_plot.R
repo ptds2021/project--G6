@@ -41,10 +41,10 @@ timeseries <- function(countries_list, record_type, indicator, doforecast, yearf
 
     #forecast
     fit <- data_country_ts %>%
-           model(fpp3::ARIMA(index))
+           model(fable::ARIMA(index))
 
     forecast_plot <- fit %>%
-                     fpp3::forecast(h = yearforecast) %>%
+                     fabletools::forecast(h = yearforecast) %>%
                      autoplot(data_country_ts) +
                      ggplot2::ggtitle("Time series by country and year") +
                      ggplot2::xlab("year") +
