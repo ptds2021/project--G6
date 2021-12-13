@@ -8,6 +8,8 @@
 
 worldmap_overview <- function(record_type){
 
+  library(dplyr)
+
   data <- readr::read_csv(here::here("NFA 2019 public_data.csv"))
 
   # Create a data frame of map data
@@ -36,7 +38,7 @@ worldmap_overview <- function(record_type){
                                                               "<br>Built-up land: ", built_up_land,
                                                               "<br>Total: ", total))) +
 
-    ggplot2::geom_polygon(aes(fill = total)) +
+    ggplot2::geom_polygon(ggplot2::aes(fill = total)) +
 
     # Plot legends
     ggplot2::labs(title = "Total Ecological Footprint of Production (in gha) in 2016",
@@ -45,18 +47,18 @@ worldmap_overview <- function(record_type){
                   fill = "Total Ecological Footprint of Production") +
 
     # Plot layout
-    ggplot2::theme(rect = element_blank(),
-             axis.ticks.y = element_blank(),
-             axis.ticks.x = element_blank(),
-             axis.text.y = element_blank(),
-             axis.title.y = element_blank(),
-             axis.title.x = element_blank(),
-             axis.text.x = element_blank())  +
+    ggplot2::theme(rect = ggplot2::element_blank(),
+                   axis.ticks.y = ggplot2::element_blank(),
+                   axis.ticks.x = ggplot2::element_blank(),
+                   axis.text.y = ggplot2::element_blank(),
+                   axis.title.y = ggplot2::element_blank(),
+                   axis.title.x = ggplot2::element_blank(),
+                   axis.text.x = ggplot2::element_blank())  +
 
-    ggplot2::theme(plot.title = element_text(hjust = 0.5))
+    ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))
 
   return(plotly::ggplotly(map1,
-                  tooltip = "text"))
+                          tooltip = "text"))
 
 }
 
