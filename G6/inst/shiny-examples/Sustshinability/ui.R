@@ -56,13 +56,17 @@ shinyUI(fluidPage(
              selectInput("indicator_st", "Choose an indicator:",
                          c("crop_land","grazing_land","forest_land","fishing_ground","built_up_land","carbon","total"),
                          multiple = FALSE),
-              dateRangeInput("year_range", "choose a year range"
-                             start = 1961,
-                             end = 2016,
-                             min = 1961,
-                             max = 2016,
-                             format = "yyyy"
-                             ),
+             selectInput(
+               inputId =  "start_year", 
+               label = "Select start of the period", 
+               choices = 1961:2016
+             ),
+             selectInput(
+               inputId =  "end_year", 
+               label = "Select end of the period", 
+               choices = 1961:2016
+             ),
+
              tableOutput("Statistics")
     )
                          

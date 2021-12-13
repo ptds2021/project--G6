@@ -1,5 +1,5 @@
 library(shiny)
-library(G6)
+#library(G6)
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
@@ -21,7 +21,7 @@ shinyServer(function(input, output) {
 
   
   output$Statistics <- renderTable({
-    display_stats(input$countries_st, input$record_st, input$indicator_st, input$year_range)
+    display_stats(input$countries_st, input$record_st, input$indicator_st, (input$start_year:input$end_year))
   })
   
 
