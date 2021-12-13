@@ -26,12 +26,24 @@ if ("World" %in% countries_list){
   # filter by year range
   data_stats <- data_stats %>% filter (year %in% year_range)
   
+  # compute the value of all countries for comparison
+  global <- data %>% dplyr::select(year, country, record , {{indicator}}) %>% filter (year %in% year_range)
+
+  
+  colnames(global)<- c("year", "country", "record", "indicator")
+  
+  global$indicator<- as.numeric(as.character(global$indicator))
+  
+  
+  # sum all the values
+  total_countries <- sum (global$indicator,na.rm = TRUE)
+  
   # compute the mean for the world
   mean_world <- data_stats %>% filter (country == "World")
   mean_world <-  mean(mean_world$indicator)
   
   # group by country and compute all the statistics
-  summary <- data_stats %>% group_by(country) %>% summarise (min = min(indicator), median = median(indicator), mean = mean(indicator), sd = sd(indicator), max = max (indicator), evolution = ((last(indicator)-first(indicator))/first(indicator))*100, world_proportion = mean(indicator)/mean_world )
+  summary <- data_stats %>% group_by(country) %>% summarise (min = min(indicator), median = median(indicator), mean = mean(indicator), sd = sd(indicator), max = max (indicator), total = sum (indicator, na.rm = TRUE), evolution = ((last(indicator)-first(indicator))/first(indicator))*100, world_proportion = mean(indicator)/mean_world, represent_globaly = total/total_countries )
   
   return(summary)
 }
@@ -60,13 +72,26 @@ else { # won't display world, because it isn't selected by the user
   # filter by year range
   data_stats <- data_stats %>% filter (year %in% year_range)
   
+  # compute the value of all countries for comparison
+  # compute the value of all countries for comparison
+  global <- data %>% dplyr::select(year, country, record , {{indicator}}) %>% filter (year %in% year_range)
+  
+  
+  colnames(global)<- c("year", "country", "record", "indicator")
+  
+  global$indicator<- as.numeric(as.character(global$indicator))
+  
+  
+  # sum all the values
+  total_countries <- sum (global$indicator,na.rm = TRUE)
+  
+  
   # compute the mean for the world
   mean_world <- data_stats %>% filter (country == "World")
   mean_world <-  mean(mean_world$indicator)
   
   # group by country and compute all the statistics
-  summary <- data_stats %>% group_by(country) %>% summarise (min = min(indicator), median = median(indicator), mean = mean(indicator), sd = sd(indicator), max = max (indicator), evolution = ((last(indicator)-first(indicator))/first(indicator))*100, world_proportion = mean(indicator)/mean_world )
-  
+  summary <- data_stats %>% group_by(country) %>% summarise (min = min(indicator), median = median(indicator), mean = mean(indicator), sd = sd(indicator), max = max (indicator), total = sum (indicator, na.rm = TRUE), evolution = ((last(indicator)-first(indicator))/first(indicator))*100, world_proportion = mean(indicator)/mean_world, represent_globaly = total/total_countries )
   # remove world because it was not selected
   summary <- summary %>% filter (country != "World")
   
@@ -79,3 +104,5 @@ else { # won't display world, because it isn't selected by the user
 # https://cran.r-project.org/web/packages/kableExtra/vignettes/use_kable_in_shiny.html
 
 print(display_stats(c("France", "Switzerland", "World"),"AreaPerCap", "crop_land",(1990:2010)))
+
+
