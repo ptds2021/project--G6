@@ -20,7 +20,7 @@ shinyServer(function(input, output) {
   })
 
   output$Statistics <- renderTable({
-    display_stats(input$countries_st, input$record_st, input$indicator_st, (input$start_year:input$end_year))
+    G6_stats(input$countries_st, input$record_st, input$indicator_st, (input$start_year:input$end_year))
   })
 
 
