@@ -4,7 +4,7 @@
 #' @return An interactive World map
 #' @export
 #' @examples
-#' map_overview("AreaPerCap")
+#' G6::map_overview("AreaPerCap")
 
 map_overview <- function(record_type){
 
