@@ -56,7 +56,7 @@ shinyUI(fluidPage(
              selectInput("indicator_st", "Choose an indicator:",
                          c("crop_land","grazing_land","forest_land","fishing_ground","built_up_land","carbon","total"),
                          multiple = FALSE),
-              dateRangeInput("year_range",
+              dateRangeInput("year_range", "choose a year range"
                              start = 1961,
                              end = 2016,
                              min = 1961,
