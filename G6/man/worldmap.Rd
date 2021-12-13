@@ -4,7 +4,7 @@
 \alias{worldmap}
 \title{World Map}
 \usage{
-worldmap()
+worldmap(country_selected, indicator, record_chosen)
 }
 \value{
 A World Map with the countries ecological footprint.
