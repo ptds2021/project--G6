@@ -4,9 +4,9 @@
 #' @return An interactive World map
 #' @export
 #' @examples
-#' G6::map_overview("AreaPerCap")
+#' worldmap_overview("AreaPerCap")
 
-map_overview <- function(record_type){
+worldmap_overview <- function(record_type){
 
   data <- readr::read_csv(here::here("NFA 2019 public_data.csv"))
 

@@ -12,7 +12,7 @@ shinyServer(function(input, output) {
   })
 
   output$`Map Overview` <- renderPlot({
-    map_overview(input$record)
+    worldmap_overview(input$record)
   })
 
   output$Timeseries <- renderPlot({
