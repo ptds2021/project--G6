@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://project-g6.netlify.app"
 languageCode = "en-us"
 title = "Ecological Footprint by Coutry and by Year"
 theme = "hugo-lithium"
