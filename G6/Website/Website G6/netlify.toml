@@ -17,6 +17,9 @@ command = 'hugo -F -b $DEPLOY_PRIME_URL'
 HUGO_ENV = 'production'
 
 [[redirects]]
-  from = /*
-  to = /index.html
-  status = 200
+  from = "/*"
+  to = "/index.html"
+  status = 301
+  force = false
+  query = {path = ":path"}
+  conditions = {Language = ["en"], Country = ["US"], Role = ["admin"]}
