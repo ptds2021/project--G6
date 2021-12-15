@@ -13,6 +13,9 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\
     name = "About"
     url = "/about/"
 [[menu.main]]
+    name = "HelloWorld"
+    url = "/hello/"
+[[menu.main]]
     name = "GitHub"
     url = "https://github.com/ptds2021/project--G6"
 [[menu.main]]
