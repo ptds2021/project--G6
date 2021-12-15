@@ -9,21 +9,31 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\
 [permalinks]
     post = "/:year/:month/:day/:slug/"
 
+
 [[menu.main]]
-    name = "About"
-    url = "/about/"
+    name = "Introduction"
+    url = "/Introduction/"
+    weight = 10
 [[menu.main]]
-    name = "HelloWorld"
-    url = "/hello/"
+    name = "Data"
+    url = "/data/"
+    weight = 20
+[[menu.main]]
+    name = "Susthinybility"
+    url = "/shiny/"
+    weight = 30
+[[menu.main]]
+    name = "Team"
+    url = "/team/"
+    weight = 40
 [[menu.main]]
     name = "GitHub"
     url = "https://github.com/ptds2021/project--G6"
-[[menu.main]]
-    name = "Twitter"
-    url = "https://twitter.com/rstudio"
+    weight = 50
+
 
 [params]
-    description = "A website built through Hugo and blogdown."
+    description = "Susthinybility"
 
     # options for highlight.js (version, additional languages, and theme)
     highlightjsVersion = "9.12.0"
@@ -38,7 +48,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\
     favicon = "favicon.ico"
 
     [params.logo]
-    url = "logo.png"
+    url = "favicon-32x32.png"
     width = 50
     height = 50
     alt = "Logo"
