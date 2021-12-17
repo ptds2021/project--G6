@@ -9,7 +9,7 @@
 
 sustainability <- function(countries_select) {
 
-  library(dplyr)
+
 
   data <- readr::read_csv(here::here("NFA_2019_public_data.csv"))
 
@@ -17,14 +17,14 @@ sustainability <- function(countries_select) {
   sustain <- data %>%
              dplyr::filter(record == "BiocapPerCap" | record == "EFConsPerCap") %>%
              dplyr::group_by(year, country) %>%
-             dplyr::summarise(sustainablity = - diff(total))
+             dplyr::summarise(sustainability = - diff(total))
 
   sustbycountry <- dplyr::filter(sustain,
                                  country %in% countries_select)
 
   plot_countries <- ggplot2::ggplot(sustbycountry,
                                     mapping = ggplot2::aes(x = year,
-                                                           y = sustainablity,
+                                                           y = sustainability,
                                                            fill = factor(country))) +
 
                     # Create bar plot
