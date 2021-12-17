@@ -22,7 +22,6 @@ Imports: shiny (>= 1.7.1),
          fpp3,
          plotly,
          data.table,
-         magrittr,
          roxygen2,
          magrittr
 Encoding: UTF-8
