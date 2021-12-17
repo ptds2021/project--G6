@@ -3,5 +3,4 @@
 export(G6_stats)
 export(sustainability)
 export(timeseries)
-export(worldmap)
 export(worldmap_overview)

@@ -11,7 +11,9 @@
 
 G6_stats <- function (countries_list, record_type, indicator, year_range){
 
-  data <- readr::read_csv(here::here("NFA 2019 public_data.csv"))
+  library(dplyr)
+
+  data <- readr::read_csv(here::here("NFA_2019_public_data.csv"))
 
   if ("World" %in% countries_list){
 
@@ -115,7 +117,7 @@ G6_stats <- function (countries_list, record_type, indicator, year_range){
                                 sd = stats::sd(indicator),
                                 max = max (indicator),
                                 total = sum (indicator, na.rm = TRUE),
-                                evolution = ((last(indicator)-first(indicator))/first(indicator))*100,
+                                evolution = ((dplyr::last(indicator)-dplyr::first(indicator))/first(indicator))*100,
                                 world_proportion = mean(indicator)/mean_world,
                                 global_proportion = total/total_countries)
 

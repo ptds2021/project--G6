@@ -1,8 +1,8 @@
 ---
-title: "ts_countries"
+title: "timeseries"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{ts_countries}
+  %\VignetteIndexEntry{timeseries}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(G6)
-ts_countries
+timeseries
 ```
 
 ##Ts_Countries

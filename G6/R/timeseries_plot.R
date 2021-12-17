@@ -12,11 +12,12 @@
 #' timeseries(country_list, "EFProdTotGHA", quo(fishing_ground), "No", 10)
 
 timeseries <- function(countries_list, record_type, indicator, doforecast, yearforecast){
-  
+
   library(fpp3)
+  library(dplyr)
 
   #read data
-  data <- readr::read_csv(here::here("NFA 2019 public_data.csv"))
+  data <- readr::read_csv(here::here("NFA_2019_public_data.csv"))
 
 
   # select variables and filter for country and record

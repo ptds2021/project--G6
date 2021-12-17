@@ -9,7 +9,9 @@
 
 sustainability <- function(countries_select) {
 
-  data <- readr::read_csv(here::here("NFA 2019 public_data.csv"))
+  library(dplyr)
+
+  data <- readr::read_csv(here::here("NFA_2019_public_data.csv"))
 
   ## Creation
   sustain <- data %>%
