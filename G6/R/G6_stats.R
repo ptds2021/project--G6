@@ -57,7 +57,7 @@ G6_stats <- function (countries_list, record_type, indicator, year_range){
                                 sd = stats::sd(indicator),
                                 max = max(indicator),
                                 total = sum(indicator, na.rm = TRUE),
-                                evolution = ((last(indicator)-first(indicator))/first(indicator))*100,
+                                evolution = ((dplyr::last(indicator)-dplyr::first(indicator))/dplyr::first(indicator))*100,
                                 world_mean_diff = mean(indicator)/mean_world,
                                 global_proportion = total/total_countries)
 
