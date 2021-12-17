@@ -12,7 +12,7 @@
 
 G6_stats <- function (countries_list, record_type, indicator, year_range){
 
-  data <- readr::read_csv(here::here("NFA_2019_public_data.csv"))
+  data <- readr::read_csv(here::here("data/NFA_2019_public_data.csv"))
 
   if ("World" %in% countries_list){
 

@@ -7,3 +7,5 @@ This tool will be able to help spreading awareness and understand the gravity an
 
 This project is still at its starting point, only the Project Proposal has been made for now.
 
+# to Check use command devtools::check() instead of the button *check* in the top right panel of RStudio environnement. 
+

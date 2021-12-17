@@ -15,7 +15,7 @@
 timeseries <- function(countries_list, record_type, indicator, doforecast, yearforecast){
 
   #read data
-  data <- readr::read_csv(here::here("NFA_2019_public_data.csv"))
+  data <- readr::read_csv(here::here("data/NFA_2019_public_data.csv"))
 
 
   # select variables and filter for country and record

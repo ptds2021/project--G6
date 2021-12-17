@@ -9,7 +9,7 @@
 
 worldmap_overview <- function(record_type){
 
-  data <- readr::read_csv(here::here("NFA_2019_public_data.csv"))
+  data <- readr::read_csv(here::here("data/NFA_2019_public_data.csv"))
 
   # Create a data frame of map data
   mapdata <- ggplot2::map_data("world")

@@ -1,6 +1,6 @@
 library(shiny)
 
-data <- readr::read_csv(here::here("NFA_2019_public_data.csv"))
+data <- readr::read_csv(here::here("data/NFA_2019_public_data.csv"))
 
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
