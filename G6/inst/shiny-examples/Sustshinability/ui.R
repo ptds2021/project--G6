@@ -21,7 +21,7 @@ shinyUI(fluidPage(
                          c(unique(data$record)),
                          multiple = FALSE),
              plotOutput("Map Overview")),
-    tabPanel("Plot1",
+    tabPanel("Sustainability",
              selectInput("country", "Choose a country:",
                          c(unique(data$country)),
                          multiple = TRUE),
@@ -57,19 +57,19 @@ shinyUI(fluidPage(
                          c("crop_land","grazing_land","forest_land","fishing_ground","built_up_land","carbon","total"),
                          multiple = FALSE),
              selectInput(
-               inputId =  "start_year", 
-               label = "Select start of the period", 
+               inputId =  "start_year",
+               label = "Select start of the period",
                choices = 1961:2016
              ),
              selectInput(
-               inputId =  "end_year", 
-               label = "Select end of the period", 
+               inputId =  "end_year",
+               label = "Select end of the period",
                choices = 1961:2016
              ),
 
              tableOutput("Statistics")
     )
-                         
+
     )
   )
 )

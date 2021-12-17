@@ -1,5 +1,5 @@
 library(shiny)
-#library(G6)
+library(G6)
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
