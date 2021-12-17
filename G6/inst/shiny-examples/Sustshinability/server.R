@@ -23,6 +23,5 @@ shinyServer(function(input, output) {
     G6_stats(input$countries_st, input$record_st, input$indicator_st, (input$start_year:input$end_year))
   })
 
-
-
 })
+
