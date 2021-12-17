@@ -5,7 +5,7 @@
 #' @param indicator Indicator selected by the user (crop land, grazing land, forest land, fishing ground, built-up land, carbon and total).
 #' @param year_range Period over which the statistics are given.
 #' @return A table of statistics
-#' @importFrom magrittr
+#' @importFrom magrittr "%>%"
 #' @export
 #' @examples
 #' G6_stats(c("France", "Switzerland", "World"), "AreaPerCap", "crop_land", (1990:2010))

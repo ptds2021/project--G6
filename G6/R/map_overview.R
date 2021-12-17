@@ -2,7 +2,7 @@
 #' @description The function returns an interactive World map of available countries displaying the total ecological footprint (crop land, grazing land, forest land, fishing ground, built-up land and carbon) of different production sites, by selected record type. The user can move the mouse cursor on a country and see more detailed information on the different production sites' ecological footprint.
 #' @param record_type Record type selected by the user ("AreaPerCap", "AreaTotHA", "BiocapPerCap", "BiocapTotGHA", "EFConsPerCap", "EFConsTotGHA", "EFProdPerCap", "EFProdTotGHA")
 #' @return An interactive World map
-#' @importFrom tidyverse %>%
+#' @importFrom magrittr "%>%"
 #' @export
 #' @examples
 #' worldmap_overview("AreaPerCap")

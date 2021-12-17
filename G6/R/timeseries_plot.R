@@ -6,7 +6,7 @@
 #' @param doforecast Option to display forecasts or not.
 #' @param yearforecast Number of years over which to forecast.
 #' @return A Time Series of the evolution of ecological footprint of chosen countries.
-#' @importFrom dplyr %>%
+#' @importFrom magrittr "%>%"
 #' @export
 #' @examples
 #' country_list <- list("Spain", "Italy","France", "Germany","Switzerland")
