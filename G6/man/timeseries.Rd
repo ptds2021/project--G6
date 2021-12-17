@@ -25,5 +25,5 @@ The function returns a times series of the evolution of different production sur
 }
 \examples{
 country_list <- list("Spain", "Italy","France", "Germany","Switzerland")
-timeseries(country_list, "EFProdTotGHA", quo(fishing_ground), "No", 10)
+timeseries(country_list, "EFProdTotGHA", "fishing_ground", "No", 10)
 }

@@ -10,12 +10,12 @@
 #' @export
 #' @examples
 #' country_list <- list("Spain", "Italy","France", "Germany","Switzerland")
-#' timeseries(country_list, "EFProdTotGHA", quo(fishing_ground), "No", 10)
+#' timeseries(country_list, "EFProdTotGHA", "fishing_ground", "No", 10)
 
 timeseries <- function(countries_list, record_type, indicator, doforecast, yearforecast){
 
   #read data
-  data <- readr::read_csv(here::here("data/NFA_2019_public_data.csv"))
+  data <- readr::read_csv(system.file("extdata", "NFA_2019_public_data.csv", package = "G6"))
 
 
   # select variables and filter for country and record
@@ -25,13 +25,13 @@ timeseries <- function(countries_list, record_type, indicator, doforecast, yearf
 
   data_country_ts <- data_country_ts %>%
                      tsibble::tsibble(index = year, key = country) %>%
-                     dplyr::mutate(index = as.double(data_country_ts[[indicator]]))
+                     dplyr::mutate(indicator_name = as.double(data_country_ts[[indicator]]))
 
   if(doforecast == "No"){
 
     #no forecast
     standard_plot <- data_country_ts %>%
-                     ggplot2::autoplot(index) +
+                     ggplot2::autoplot(indicator_name) +
                      ggplot2::ggtitle("Time series by country and year") +
                      ggplot2::xlab("year") +
                      ggplot2::ylab(paste0("for record: ", data_country_ts$record[1]))
@@ -42,7 +42,7 @@ timeseries <- function(countries_list, record_type, indicator, doforecast, yearf
 
     #forecast
     fit <- data_country_ts %>%
-           fabletools::model(fable::ARIMA(index))
+           fabletools::model(fable::ARIMA(indicator_name))
 
     forecast_plot <- fit %>%
                      fabletools::forecast(h = yearforecast) %>%

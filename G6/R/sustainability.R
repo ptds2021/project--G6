@@ -12,7 +12,7 @@ sustainability <- function(countries_select) {
 
 
 
-  data <- readr::read_csv(here::here("data/NFA_2019_public_data.csv"))
+  data <- readr::read_csv(system.file("extdata", "NFA_2019_public_data.csv", package = "G6"))
 
   ## Creation
   sustain <- data %>%
