@@ -10,6 +10,7 @@
 #' G6_stats(c("France", "Switzerland", "World"), "AreaPerCap", "crop_land", (1990:2010))
 
 G6_stats <- function (countries_list, record_type, indicator, year_range){
+<<<<<<< HEAD:G6/R/G6_stats.R
 
   library(dplyr)
 
@@ -34,7 +35,8 @@ G6_stats <- function (countries_list, record_type, indicator, year_range){
     # compute the value of all countries for comparison
     global <- data %>%
               dplyr::select(year, country, record, {{indicator}}) %>%
-              dplyr::filter(year %in% year_range)
+              dplyr::filter(year %in% year_range) %>%
+              dplyr::filter(country != "World")
 
     colnames(global) <- c("year", "country", "record", "indicator")
 
@@ -59,7 +61,7 @@ G6_stats <- function (countries_list, record_type, indicator, year_range){
                                 max = max(indicator),
                                 total = sum(indicator, na.rm = TRUE),
                                 evolution = ((last(indicator)-first(indicator))/first(indicator))*100,
-                                world_proportion = mean(indicator)/mean_world,
+                                world_mean_diff = mean(indicator)/mean_world,
                                 global_proportion = total/total_countries)
 
     return(summary)
@@ -117,8 +119,13 @@ G6_stats <- function (countries_list, record_type, indicator, year_range){
                                 sd = stats::sd(indicator),
                                 max = max (indicator),
                                 total = sum (indicator, na.rm = TRUE),
+<<<<<<< HEAD:G6/R/G6_stats.R
                                 evolution = ((dplyr::last(indicator)-dplyr::first(indicator))/first(indicator))*100,
                                 world_proportion = mean(indicator)/mean_world,
+=======
+                                evolution = ((last(indicator)-first(indicator))/first(indicator))*100,
+                                world_mean_diff = mean(indicator)/mean_world,
+>>>>>>> 21d653d15689207b537ab29fb245b8e40264ba42:G6/R/stats.R
                                 global_proportion = total/total_countries)
 
     # remove world because it was not selected
