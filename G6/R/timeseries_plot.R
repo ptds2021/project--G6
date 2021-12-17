@@ -6,15 +6,13 @@
 #' @param doforecast Option to display forecasts or not.
 #' @param yearforecast Number of years over which to forecast.
 #' @return A Time Series of the evolution of ecological footprint of chosen countries.
+#' @importFrom dplyr %>%
 #' @export
 #' @examples
 #' country_list <- list("Spain", "Italy","France", "Germany","Switzerland")
 #' timeseries(country_list, "EFProdTotGHA", quo(fishing_ground), "No", 10)
 
 timeseries <- function(countries_list, record_type, indicator, doforecast, yearforecast){
-
-  library(fpp3)
-  library(dplyr)
 
   #read data
   data <- readr::read_csv(here::here("NFA_2019_public_data.csv"))

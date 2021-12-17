@@ -5,6 +5,7 @@
 #' @param indicator Indicator selected by the user (crop land, grazing land, forest land, fishing ground, built-up land, carbon and total).
 #' @param year_range Period over which the statistics are given.
 #' @return A table of statistics
+#' @importFrom magrittr
 #' @export
 #' @examples
 #' G6_stats(c("France", "Switzerland", "World"), "AreaPerCap", "crop_land", (1990:2010))
@@ -116,7 +117,7 @@ G6_stats <- function (countries_list, record_type, indicator, year_range){
                                 sd = stats::sd(indicator),
                                 max = max (indicator),
                                 total = sum (indicator, na.rm = TRUE),
-                                evolution = ((dplyr::last(indicator)-dplyr::first(indicator))/first(indicator))*100,
+                                evolution = ((dplyr::last(indicator)-dplyr::first(indicator))/dplyr::first(indicator))*100,
                                 world_proportion = mean(indicator)/mean_world,
 
                                 global_proportion = total/total_countries)
