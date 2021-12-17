@@ -20,7 +20,7 @@ shinyUI(fluidPage(
              selectInput("record", "Choose a record type:",
                          c(unique(data$record)),
                          multiple = FALSE),
-             plotOutput("Map Overview")),
+             plotly::plotlyOutput("Map Overview")),
     tabPanel("Sustainability",
              selectInput("country", "Choose a country:",
                          c(unique(data$country)),
