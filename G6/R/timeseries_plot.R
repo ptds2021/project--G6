@@ -12,6 +12,8 @@
 #' timeseries(country_list, "EFProdTotGHA", quo(fishing_ground), "No", 10)
 
 timeseries <- function(countries_list, record_type, indicator, doforecast, yearforecast){
+  
+  library(fpp3)
 
   #read data
   data <- readr::read_csv(here::here("NFA 2019 public_data.csv"))
@@ -30,7 +32,7 @@ timeseries <- function(countries_list, record_type, indicator, doforecast, yearf
 
     #no forecast
     standard_plot <- data_country_ts %>%
-                     autoplot(index) +
+                     ggplot2::autoplot(index) +
                      ggplot2::ggtitle("Time series by country and year") +
                      ggplot2::xlab("year") +
                      ggplot2::ylab(paste0("for record: ", data_country_ts$record[1]))
@@ -41,11 +43,11 @@ timeseries <- function(countries_list, record_type, indicator, doforecast, yearf
 
     #forecast
     fit <- data_country_ts %>%
-           model(fable::ARIMA(index))
+           fabletools::model(fable::ARIMA(index))
 
     forecast_plot <- fit %>%
                      fabletools::forecast(h = yearforecast) %>%
-                     autoplot(data_country_ts) +
+                     ggplot2::autoplot(data_country_ts) +
                      ggplot2::ggtitle("Time series by country and year") +
                      ggplot2::xlab("year") +
                      ggplot2::ylab(paste0("for record : ", data_country_ts$record[1]))
