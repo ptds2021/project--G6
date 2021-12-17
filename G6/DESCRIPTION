@@ -31,3 +31,4 @@ Suggests:
     rmarkdown,
     knitr
 VignetteBuilder: knitr
+LazyData: true
