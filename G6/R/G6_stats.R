@@ -11,8 +11,6 @@
 
 G6_stats <- function (countries_list, record_type, indicator, year_range){
 
-  library(dplyr)
-
   data <- readr::read_csv(here::here("NFA_2019_public_data.csv"))
 
   if ("World" %in% countries_list){
@@ -132,6 +130,6 @@ G6_stats <- function (countries_list, record_type, indicator, year_range){
   }
 }
 
-print(G6_stats(c("France", "Switzerland", "World"),"AreaPerCap", "crop_land",(1990:2010)))
+
 
 

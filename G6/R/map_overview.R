@@ -8,8 +8,6 @@
 
 worldmap_overview <- function(record_type){
 
-  library(dplyr)
-
   data <- readr::read_csv(here::here("NFA_2019_public_data.csv"))
 
   # Create a data frame of map data

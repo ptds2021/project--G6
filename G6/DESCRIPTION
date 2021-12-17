@@ -1,5 +1,5 @@
 Package: G6
-Title: G6 provides analytical tools to study countries' sustainability.
+Title: G6 provides analytical tools to study countries' sustainability
 Version: 0.1.0
 Authors@R: c(
     person("Virany", "Kho", email = "virany.kho@unil.ch", role = "aut"),
@@ -10,6 +10,7 @@ Authors@R: c(
 Maintainer: Colin Steffe <colin.steffe@unil.ch>
 Description: This package provides functions to study the ecological footprint of some countries around the world.
 License: MIT + file LICENSE
+Depends: R (>= 3.3.1)
 Imports: shiny (>= 1.7.1),
          dplyr,
          fable,
