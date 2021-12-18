@@ -5,7 +5,7 @@
 #' @examples
 #' run_shiny()
 
-source("../Sustshinability")
+#source("server.R")
 
 run_shiny <- function(){
 
