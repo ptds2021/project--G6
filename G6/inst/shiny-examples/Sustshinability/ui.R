@@ -3,7 +3,7 @@ library(shiny)
 data <- readr::read_csv(system.file("extdata", "NFA_2019_public_data.csv", package = "G6"))
 
 # Define UI for application that draws a histogram
-shinyUI(fluidPage(
+shinyUI(ui = fluidPage(
 
   # Add theme
   theme = bslib::bs_theme(bootswatch = "flatly"),

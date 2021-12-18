@@ -2,7 +2,7 @@ library(shiny)
 library(G6)
 
 # Define server logic required to draw a histogram
-shinyServer(function(input, output) {
+shinyServer(server = function(input, output) {
 
   thematic::thematic_shiny()
 
