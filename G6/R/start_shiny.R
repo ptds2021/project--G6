@@ -6,10 +6,12 @@
 #' run_shiny()
 
 #source("server.R")
+#file.path(getwd(), "Graphics", "graph1.R")
 
 run_shiny <- function(){
 
-  runApp('inst/shiny-examples/Sustshinability')
-  shinyApp(ui = ui, server = server)
+  runApp('inst/shiny-examples/Sustshinability/server.R')
+  #shinyApp(ui = ui, server = server)
 
 }
+
