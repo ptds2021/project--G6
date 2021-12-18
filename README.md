@@ -17,6 +17,10 @@ The *project--G6.Rproj* contains three main folders and a README.md file:
 
 ## Website 
 
+By copying and pasting the following link you will access our website: https://ptds2021-g6.netlify.app/
+
+To go back to the main page of the website you can click on the top left logo. 
+
 ----------------------
 # G6 (package folder)
 ----------------------
