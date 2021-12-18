@@ -13,5 +13,5 @@ shiny app UI
 Function to start the shiny app once the package is loaded
 }
 \examples{
-launch_app()
+launch_app
 }

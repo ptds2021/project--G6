@@ -3,7 +3,7 @@
 #' @return shiny app UI
 #' @export
 #' @examples
-#' run_shiny()
+#' launch_app
 
 #source("server.R")
 #file.path(getwd(), "Graphics", "graph1.R")
