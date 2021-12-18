@@ -1,5 +1,5 @@
 #' @title Launch shiny app
-#' @description Function to call the shiny app once the package is loaded
+#' @description The function calls the shiny app once the package is loaded
 #' @return shiny app UI
 #' @export
 #' @examples
