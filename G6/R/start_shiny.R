@@ -5,8 +5,7 @@
 #' @examples
 #' run_shiny ()
 
-
-
 run_shiny <- function(){
   runApp('inst/shiny-examples/Sustshinability')
+  shinyApp(ui = ui, server = server)
 }
