@@ -1,0 +1,62 @@
+---
+title: "Interactive Shiny App: Carbon Emissions by Coutry and by Year"
+
+author: "Daniel Welz, Guillaume Bilocq, Jasmine Mawjee, Virany Kho, Colin Steffe"
+date: "`r Sys.Date()`"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Intro
+
+In the last decades, with the rise of global warming and natural disasters, there is an urgent need to reduce our individual ecological footprint. By now, we are aware that by reducing our overall consumption, shift our purchasing habits and so on, we can globally contribute to a common goal: a cleaner planet.
+
+## Agenda
+
+- Identified pain points
+- Goals and Impact
+- Data
+- Sustainability App
+- Comparison of results
+- Team
+
+
+## Identfied pain points
+
+- **Uneducated population:** Many aspects of sustainability are not well understood
+
+- **Lack of transparency:** Not immediately obvious how our personal immediate actions fit the overall picture
+
+- **Scattered data:** Sustainability data is scattered among all kinds of media in a "fuzzy" way.
+
+
+## Goals
+
+To address the above points and challenges, we want to create the S(ust)hinybility app based on a reliable database. This app 
+
+- **gathers** worldwide data on carbon emissions 
+ 
+- **exploits** the specific information by year and by country
+
+- **provides** visualization to compare carbon emissions on a country (or region) level
+
+## Impact
+
+We try to have the impact on three different levels. 
+
+- **First** the individuals are nudged to learn ---> *increases knowledge and awareness*
+
+- **Second** making ecological footprints comparable. ---> *Higher satisfaction of researchers.* 
+
+- **Third** the interactive app helps to check facts and used against wrongly spread information ---> *This increases data credibility.* 
+
+## Data
+
+- *Source:* 2019 edition of the *National Footprint and Biocapacity Accounts*
+
+- *Variables:* The (public) data set has 12 variables and provide information on 72,186 observations on 192 countries
+
+- *
