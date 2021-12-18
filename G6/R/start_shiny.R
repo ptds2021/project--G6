@@ -10,8 +10,8 @@
 
 launch_app <- function(){
 
-  runApp('inst/shiny-examples/Sustshinability/server.R')
-  #shinyApp(ui = ui, server = server)
+  shiny::runApp(system.file("shiny-examples","Sustshinability",package = "G6"))
+
 
 }
 
