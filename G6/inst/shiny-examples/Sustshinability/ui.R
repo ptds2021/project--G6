@@ -1,6 +1,6 @@
 library(shiny)
 
-data <- readr::read_csv(here::here("data/NFA_2019_public_data.csv"))
+data <- readr::read_csv(system.file("extdata", "NFA_2019_public_data.csv", package = "G6"))
 
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
@@ -25,9 +25,9 @@ shinyUI(fluidPage(
              selectInput("country", "Choose a country:",
                          c(unique(data$country)),
                          multiple = TRUE),
-             plotly::plotlyOutput("Map Overview")),
+             plotOutput("Sustainibility plot")),
 
-    tabPanel("Sustainability",("Sustainibility plot")),
+
 
     tabPanel("Timeseries",
              selectInput("countries_ts","choose countries:",
@@ -52,9 +52,9 @@ shinyUI(fluidPage(
                          min = 1,
                          max = 50,
                          value = 30),
-             plotly::plotlyOutput("Map Overview")),
+             plotOutput("Timeseries")),
 
-    tabPanel("Sustainability", ("Timeseries")),
+
 
     tabPanel("Statistics",
              selectInput("countries_st","choose countries:",
