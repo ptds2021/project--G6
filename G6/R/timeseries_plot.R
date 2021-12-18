@@ -1,5 +1,5 @@
 #' @title Time Series Plot
-#' @description The function returns a times series of the evolution of different production surface areas' ecological footprint over the years for selected country/ies. The plot can display some forecasting if the user selects the option to do so.
+#' @description The function returns times series of the evolution of different production surface areas' ecological footprints over the years for one or more selected countries. The plot can display some forecasting if the user selects the option to do so.
 #' @param countries_list List of countries chosen by the user.
 #' @param record_type Record chosen by the user.
 #' @param indicator Indicator selected by the user (crop land, grazing land, forest land, fishing ground, built-up land, carbon and total).

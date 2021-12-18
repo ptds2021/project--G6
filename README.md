@@ -6,13 +6,15 @@ In the last decades, with the rise of global warming and natural disasters, ther
 
 ## Package Content
 
-The following piece of work aims to create a package called **G6** providing five functions:
+The following piece of work creates a package called **G6** providing five functions (four functions are specific to our package  and one function is to launch the shiny app) and a shiny app:
 
 * G6_stats: The function returns a table displaying statistics for one or more selected countries. 
 
+* map_overview: The function returns an interactive World map (of available countries) displaying the total ecological footprint of different production sites by selected record type. 
+
 * sustainability: The function returns a bar plot showing the yearly difference between the biocapacity (in gha) per capita and the ecological footprint of production (in gha) per capita.
 
-* map_overview: The function returns an interactive World map (of available countries) displaying the total ecological footprint of different production sites by selected record type. 
+* timeseries: The function returns times series of the evolution of different production surface areas' ecological footprints over the years for one or more selected countries. The plot can display some forecasting if the user selects the option to do so.
 
 Shiny app that will gather worldwide data on carbon emissions caused by different types of production lands and exploit the information to produce visual outcomes enabling a user to look for specific information by country and by year, and allowing comparisons by country or region. 
 
