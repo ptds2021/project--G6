@@ -15,13 +15,8 @@ shinyUI(fluidPage(
   # Add toc
   navlistPanel(id = "tabset",
 
-    tabPanel("World Overview",
-             selectInput("record", "Choose a record type:",
-                         c(unique(data$record)),
-                         multiple = FALSE),
-             plotly::plotlyOutput("Map Overview")),
 
-    tabPanel("Sustainability",
+    tabPanel("Ecological balance",
              selectInput("country", "Choose a country:",
                          c(unique(data$country)),
                          multiple = TRUE),
@@ -53,6 +48,12 @@ shinyUI(fluidPage(
                          max = 50,
                          value = 30),
              plotOutput("Timeseries")),
+
+    tabPanel("World Overview",
+             selectInput("record", "Choose a record type:",
+                         c(unique(data$record)),
+                         multiple = FALSE),
+             plotly::plotlyOutput("Map Overview")),
 
 
 

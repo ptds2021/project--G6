@@ -32,7 +32,7 @@ sustainability <- function(countries_select) {
                     ggplot2::geom_bar(stat = "identity",
                                       position = "dodge") +
 
-                    ggplot2::labs(title = "Sustainability by country per year",
+                    ggplot2::labs(title = "Ecological balance by country per year",
                                   fill = "Country")
 
 return(plot_countries)

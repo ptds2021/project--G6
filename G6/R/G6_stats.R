@@ -30,37 +30,24 @@ G6_stats <- function (countries_list, record_type, indicator, year_range){
     data_stats <- data_stats %>%
                   dplyr::filter(year %in% year_range)
 
-    # compute the value of all countries for comparison
-    global <- data %>%
-              dplyr::select(year, country, record, {{indicator}}) %>%
-              dplyr::filter(year %in% year_range) %>%
-              dplyr::filter(country != "World")
-
-    colnames(global) <- c("year", "country", "record", "indicator")
-
-    global$indicator <- as.numeric(as.character(global$indicator))
-
-    # sum all the values
-    total_countries <- sum(global$indicator,na.rm = TRUE)
 
     # compute the mean for the world
     mean_world <- data_stats %>%
                   dplyr::filter(country == "World")
 
-    mean_world <-  mean(mean_world$indicator)
+    mean_world <-  mean(mean_world$indicator, na.rm = TRUE)
 
     # group by country and compute all the statistics
     summary <- data_stats %>%
                dplyr::group_by(country) %>%
-               dplyr::summarise(min = min(indicator),
-                                median = stats::median(indicator),
-                                mean = mean(indicator),
-                                sd = stats::sd(indicator),
-                                max = max(indicator),
+               dplyr::summarise(min = min(indicator, na.rm = TRUE),
+                                median = stats::median(indicator, na.rm = TRUE),
+                                mean = mean(indicator, na.rm = TRUE),
+                                sd = stats::sd(indicator, na.rm = TRUE),
+                                max = max(indicator, na.rm = TRUE),
                                 total = sum(indicator, na.rm = TRUE),
                                 evolution = ((dplyr::last(indicator)-dplyr::first(indicator))/dplyr::first(indicator))*100,
-                                world_mean_diff = mean(indicator)/mean_world,
-                                global_proportion = total/total_countries)
+                                global_proportion = mean(indicator)/mean_world)
 
     return(summary)
 
@@ -88,39 +75,26 @@ G6_stats <- function (countries_list, record_type, indicator, year_range){
     data_stats <- data_stats %>%
                   dplyr::filter(year %in% year_range)
 
-    # compute the value of all countries for comparison
-    # compute the value of all countries for comparison
-    global <- data %>%
-              dplyr::select(year, country, record, {{indicator}}) %>%
-              dplyr::filter(year %in% year_range)
 
-    colnames(global) <- c("year", "country", "record", "indicator")
-
-    global$indicator <- as.numeric(as.character(global$indicator))
-
-    # sum all the values
-    total_countries <- sum(global$indicator, na.rm = TRUE)
 
 
     # compute the mean for the world
     mean_world <- data_stats %>%
                   dplyr::filter(country == "World")
 
-    mean_world <-  mean(mean_world$indicator)
+    mean_world <-  mean(mean_world$indicator,na.rm = TRUE)
 
     # group by country and compute all the statistics
     summary <- data_stats %>%
                dplyr::group_by(country) %>%
-               dplyr::summarise(min = min(indicator),
-                                median = stats::median(indicator),
-                                mean = mean(indicator),
-                                sd = stats::sd(indicator),
-                                max = max (indicator),
+               dplyr::summarise(min = min(indicator, na.rm = TRUE),
+                                median = stats::median(indicator, na.rm = TRUE),
+                                mean = mean(indicator, na.rm = TRUE),
+                                sd = stats::sd(indicator, na.rm = TRUE),
+                                max = max (indicator, na.rm = TRUE),
                                 total = sum (indicator, na.rm = TRUE),
                                 evolution = ((dplyr::last(indicator)-dplyr::first(indicator))/dplyr::first(indicator))*100,
-                                world_proportion = mean(indicator)/mean_world,
-
-                                global_proportion = total/total_countries)
+                                global_proportion = mean(indicator, na.rm = TRUE)/mean_world)
 
     # remove world because it was not selected
     summary <- summary %>%
