@@ -8,7 +8,7 @@
 #source("server.R")
 #file.path(getwd(), "Graphics", "graph1.R")
 
-run_shiny <- function(){
+launch_app <- function(){
 
   runApp('inst/shiny-examples/Sustshinability/server.R')
   #shinyApp(ui = ui, server = server)
