@@ -10,11 +10,11 @@
 #' @examples
 #' G6_stats(c("France", "Switzerland", "World"), "AreaPerCap", "crop_land", (1990:2010))
 
-G6_stats <- function (countries_list, record_type, indicator, year_range){
+G6_stats <- function(countries_list, record_type, indicator, year_range){
 
   data <- readr::read_csv(system.file("extdata", "NFA_2019_public_data.csv", package = "G6"))
 
-  if ("World" %in% countries_list){
+  if("World" %in% countries_list){
 
     # select variables and filter for country and record
     data_stats <- data %>%
@@ -91,7 +91,7 @@ G6_stats <- function (countries_list, record_type, indicator, year_range){
                                 median = stats::median(indicator, na.rm = TRUE),
                                 mean = mean(indicator, na.rm = TRUE),
                                 sd = stats::sd(indicator, na.rm = TRUE),
-                                max = max (indicator, na.rm = TRUE),
+                                max = max(indicator, na.rm = TRUE),
                                 total = sum (indicator, na.rm = TRUE),
                                 evolution = ((dplyr::last(indicator)-dplyr::first(indicator))/dplyr::first(indicator))*100,
                                 global_proportion = mean(indicator, na.rm = TRUE)/mean_world)
