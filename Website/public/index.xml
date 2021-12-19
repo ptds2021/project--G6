@@ -5,7 +5,8 @@
     <link>https://ptds2021-g6.netlify.app/</link>
     <description>Recent content on Group 6 Project: Production Sites&#39; Ecological Footprint</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://ptds2021-g6.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Dec 2021 21:13:14 -0500</lastBuildDate><atom:link href="https://ptds2021-g6.netlify.app/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introduction</title>
       <link>https://ptds2021-g6.netlify.app/introduction/</link>
@@ -13,6 +14,16 @@
       
       <guid>https://ptds2021-g6.netlify.app/introduction/</guid>
       <description>Goals and Impact All of us are aware of the urgent need to reduce our individual ecological footprint by reducing our overall consumption, shift our purchasing habits, recycle more, invest in renewable energies and globally contribute to a common goal: a cleaner planet. Even though world leaders gather to unify and work as a united front towards sustainable changes with the ultimate goal to slow climate change, we still currently detect many problems surrounding the topic of sustainability.</description>
+    </item>
+    
+    <item>
+      <title>Welcome to our Website !</title>
+      <link>https://ptds2021-g6.netlify.app/post/2020-12-01-r-rmarkdown/index_files/</link>
+      <pubDate>Wed, 01 Dec 2021 21:13:14 -0500</pubDate>
+      
+      <guid>https://ptds2021-g6.netlify.app/post/2020-12-01-r-rmarkdown/index_files/</guid>
+      <description>Welcome ! In this website we will explain you what kind of information the Shiny App we created, an exploratory tool called Sustshinability, can provide you as well as instructions about how it works. Hope this will be useful to you !
+Shiny App: Plot ExampleTo let you have a first taste of what the Sustshinability App can provide you, you can find below an example of plot you can have and use thanks to this App.</description>
     </item>
     
     <item>
