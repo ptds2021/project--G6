@@ -40,6 +40,10 @@ knitr::include_graphics("recyc2.jpeg")
 
 -   **Scattered data:** Sustainability data is scattered among all kinds of media in a "fuzzy" way.
 
+```{r, echo=FALSE, out.width="40%"}
+knitr::include_graphics("Footprint-highres.png")
+```
+
 ## Goals
 
 To address the above points and challenges, we want to create the S(ust)hinybility app based on a reliable database. This app
@@ -65,6 +69,10 @@ To address the above points and challenges, we want to create the S(ust)hinybili
 
 -   This increases data credibility
 :::
+
+```{r, echo=FALSE, out.width="50%"}
+knitr::include_graphics("Reduce-Your-Carbon-Footprint.jpg")
+```
 
 ## Data
 
@@ -110,11 +118,6 @@ knitr::include_graphics("sust1.png")
 knitr::include_graphics("ts.png")
 ```
 
-## Comparison of results
-
--   Best/Worst
--   Timeseries 1961-2016 -> Evolution for each of the four countries
--   Anomalies and Surprises: Chinas' growth, unexpected developments
 
 ## Limitations
 
@@ -130,21 +133,28 @@ knitr::include_graphics("ts.png")
 -   **(4)** To-Do lists and Github Projects help to track progress and have a clear view of the project
 
 ## Conclusion
-::: columns-2
+
+<div style="float: left; width: 40%;">
 Improvements for package :
 
-**Second:** Reduce the data size and computational time
+- Reduce the data size and computational time
 
-**Third:** More complex shiny app
+- More complex shiny app
+</div>
 
+<div style="float: right; width: 60%;">
+We achieved our goals ! : 
 
--   Achieved goals : we gathered a torough database
+- We managed to exploits these information to provide educational content for peoples
+ 
+- Visualization is created thanks to our shiny app
 
--   We managed to exploits these information to provide educational content for peoples
+- We gathered a torough database
+</div>
 
--   Visualization is created thanks to our shiny app
-:::
 
 ## Thank you for your attention
 
-## Sources
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("questions.jpg")
+```
