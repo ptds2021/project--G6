@@ -80,3 +80,8 @@ To let you have a first taste of what the *Sustshinability* App can provide you,
 ```{r worldmap, fig.cap='Worlmap overview.', echo=FALSE, tidy=TRUE, warning=FALSE}
 worldmap_overview("AreaPerCap")
 ```
+
+![World Map](wmap.png)
+
+
+
