@@ -32,7 +32,7 @@ G6_timeseries <- function(countries_list, record_type, indicator, doforecast, ye
 
     #no forecast
     standard_plot <- data_country_ts %>%
-                     ggplot2::autoplot(indicator_name) +
+                     feasts::autoplot(indicator_name) +
                      ggplot2::ggtitle(paste("Time series by country and year for :",indicator)) +
                      ggplot2::xlab("year") +
                      ggplot2::ylab(paste0("for record: ", data_country_ts$record[1]))
@@ -47,7 +47,7 @@ G6_timeseries <- function(countries_list, record_type, indicator, doforecast, ye
 
     forecast_plot <- fit %>%
                      fabletools::forecast(h = yearforecast) %>%
-                     ggplot2::autoplot(data_country_ts) +
+                     forecast::autoplot(data_country_ts) +
                      ggplot2::ggtitle(paste("Time series by country and year for :",indicator)) +
                      ggplot2::xlab("year") +
                      ggplot2::ylab(paste0("for record : ", data_country_ts$record[1]))
