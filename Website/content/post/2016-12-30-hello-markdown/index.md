@@ -19,6 +19,6 @@ Similarly, Blackfriday does not support LaTeX math and Pandoc does. I have added
 
 When creating a new post, you have to decide whether the post format is Markdown or R Markdown, and this can be done via the `ext` argument of the function `blogdown::new_post()`, e.g.
 
-```r
-stats_table <- G6::G6_stats(c("France", "Switzerland", "World"), "AreaPerCap", "crop_land", (1990:2010))
+```
+G6::G6_stats(c("France", "Switzerland", "World"), "AreaPerCap", "crop_land", (1990:2010))
 ```
