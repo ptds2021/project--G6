@@ -1,6 +1,6 @@
 ---
 title: "Welcome to our Website !"
-date: 2021-12-01T21:13:14-05:00
+date: "`r Sys.Date()`"
 categories: ["R"]
 tags: ["R Markdown", "plot"]
 ---
