@@ -17,7 +17,7 @@ The *project--G6.Rproj* contains three main folders and a README.md file:
 
 ## Website 
 
-By copying and pasting the following link you will access our website: https://ptds2021-g6.netlify.app/
+By copying and pasting the following link you will access our website: https://compassionate-clarke-240a24.netlify.app/
 
 To go back to the main page of the website you can click on the top left logo. 
 
@@ -52,7 +52,7 @@ The following piece of work creates a package called **G6** providing five funct
 
 * sustainability: The function returns a bar plot showing the yearly difference between the biocapacity (in gha) per capita and the ecological footprint of production (in gha) per capita.
 
-* timeseries: The function returns times series of the evolution of different production surface areas' ecological footprints over the years for one or more selected countries. The plot can display some forecasting if the user selects the option to do so.
+* timeseries: The function returns times series of the evolution of different production surface areas' ecological footprints over the years for one or more selected countries. 
 
 * start_shiny: The function calls the shiny app once the package is loaded
 
