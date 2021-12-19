@@ -51,7 +51,7 @@ timeseries <- function(countries_list, record_type, indicator, doforecast, yearf
 
     forecast_plot <- fit %>%
                      fabletools::forecast(h = yearforecast) %>%
-                     ggplot2::autoplot(data_country_ts) +
+                     forecast::autoplot(data_country_ts) +
                      ggplot2::ggtitle(paste("Time series by country and year for :",indicator)) +
                      ggplot2::xlab("year") +
                      ggplot2::ylab(paste0("for record : ", data_country_ts$record[1]))
