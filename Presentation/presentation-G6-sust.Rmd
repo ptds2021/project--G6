@@ -12,7 +12,14 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Context
 
-- Recent non-advancements and non-agreements (G7)
+- Rise in ecological concerns 
+
+- World leaders meetings to bring that topic further and take measures
+
+- Heavy political discussions and debates dividing the population 
+
+![Sample Picture](recyc2.jpeg)
+
 
 ## Agenda
 
@@ -45,13 +52,21 @@ To address the above points and challenges, we want to create the S(ust)hinybili
 
 ## Impact
 
-We try to have the impact on three different levels. 
+<div class="columns-2">
+**First** the individuals are nudged to learn
 
-- **First** the individuals are nudged to learn ---> *increases knowledge and awareness*
+**Second** making ecological footprints comparable
 
-- **Second** making ecological footprints comparable. ---> *Higher satisfaction of researchers.* 
+**Third** the interactive app helps to check facts and used against wrongly spread information 
 
-- **Third** the interactive app helps to check facts and used against wrongly spread information ---> *This increases data credibility.* 
+- Increases knowledge and awareness
+
+- Higher satisfaction of researchers 
+
+- This increases data credibility
+
+</div>
+
 
 ## Data
 
@@ -59,13 +74,33 @@ We try to have the impact on three different levels.
 
 - *Variables:* The (public) data set has 12 variables and provide information on 72,186 observations on 192 countries
 
+- *Time frame:* 1961 - 2016
 
-## Sustainability App
+## Important terms
+
+- **Ecological Footprint**
+
+- **Biocapacity**
+
+- **Carbon Footprint**
+
+
+## Sustainability App 
 
 - World Map Overview [Total]
-- Stats [Fr, Ger, Bel, Ch]
-- Time Series 
-- Sustainability
+
+![World Map](wmap.png)
+
+## Ecological Balance (2)
+
+![Overview Ecological Balance FR, GER, BEL, CH](comp_countries.png)
+
+## Statistics (3)
+
+![Statistics FR, GER, BEL, CH](app overview.png)
+
+## Time Series (4)
+
 
 
 ## Comparison of results
@@ -75,15 +110,31 @@ We try to have the impact on three different levels.
 - Anomalies and Surprises: Chinas' growth, unexpected developments
 
 
-## Limitations and Learning 
+## Limitations 
 
-- Data: Generality of dataset, bias
-- Syntax
+- **Project management:** Starting ideas too optimistic and not realistic for timeframe of class schedule
 
+- **Data:** Generality of dataset, understanding of data and selection bias
+
+
+
+
+## Learnings
+
+- **(1)** Conversion of ideas into code is time consuming (and fixing errors or deleting websites)
+- **(2)** GitHUb is quite useful for group projects and time-saving
+- **(3)** The bottlenecks of projects are usually fixing errors and checking the package
+- **(4)** To-Do lists and Github Projects help to track progress and have a clear view of the project
 
 ## Conclusion
 
 - Improvements for package
 - Achieved goal 
+
+## Thank you for your attention
+
+## Sources
+
+
 
 
