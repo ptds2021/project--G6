@@ -4,7 +4,7 @@ Package **G6** results from our interest in visualizing the impact of production
 
 Package G6 uses an external data base collecting information on some countries' Ecological Footprint over the past 55 years to display the consumption habits of populations. The functionalities of the package show the global decline in responsibility and its impact on the planet. 
 
-# Instructions
+# Package Installation
 
 1) To install package **G6** use the following command in your console:
 
@@ -20,6 +20,9 @@ library(G6)
 
 5) The following video walks you through the installation of the package:
 
+# Package Exploration
+
+The following video shows you how to explore the package's functions:
 
 
 
