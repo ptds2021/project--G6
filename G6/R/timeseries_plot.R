@@ -27,21 +27,21 @@ timeseries <- function(countries_list, record_type, indicator, doforecast, yearf
 
   # select variables and filter for country and record
   data_country_ts <- data %>%
-                     dplyr::select(year, country, record, {{indicator}}) %>%
-                     dplyr::filter(country %in% countries_list & record == record_type)
+                     fpp3::select(year, country, record, {{indicator}}) %>%
+                     fpp3::filter(country %in% countries_list & record == record_type)
 
   data_country_ts <- data_country_ts %>%
-                     tsibble::tsibble(index = year, key = country) %>%
-                     dplyr::mutate(indicator_name = as.double(data_country_ts[[indicator]]))
+                     fpp3::tsibble(index = year, key = country) %>%
+                     fpp3::mutate(indicator_name = as.double(data_country_ts[[indicator]]))
 
   if(doforecast == "No"){
 
     #no forecast
     standard_plot <- data_country_ts %>%
-                     feasts::autoplot(indicator_name) +
-                     ggplot2::ggtitle(paste("Time series by country and year for :",indicator)) +
-                     ggplot2::xlab("year") +
-                     ggplot2::ylab(paste0("for record: ", data_country_ts$record[1]))
+                     fpp3::autoplot(indicator_name) +
+                     fpp3::ggtitle(paste("Time series by country and year for :",indicator)) +
+                     fpp3::xlab("year") +
+                     fpp3::ylab(paste0("for record: ", data_country_ts$record[1]))
 
     return(standard_plot)
 
@@ -49,14 +49,14 @@ timeseries <- function(countries_list, record_type, indicator, doforecast, yearf
 
     #forecast
     fit <- data_country_ts %>%
-           fabletools::model(fable::ARIMA(indicator_name))
+           fabletools::model(fpp3::ARIMA(indicator_name))
 
     forecast_plot <- fit %>%
                      fabletools::forecast(h = yearforecast) %>%
                      forecast::autoplot(data_country_ts) +
-                     ggplot2::ggtitle(paste("Time series by country and year for :",indicator)) +
-                     ggplot2::xlab("year") +
-                     ggplot2::ylab(paste0("for record : ", data_country_ts$record[1]))
+                     fpp3::ggtitle(paste("Time series by country and year for :",indicator)) +
+                     fpp3::xlab("year") +
+                     fpp3::ylab(paste0("for record : ", data_country_ts$record[1]))
 
     return(forecast_plot)
   }
