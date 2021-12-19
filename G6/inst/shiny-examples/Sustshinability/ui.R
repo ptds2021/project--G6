@@ -17,7 +17,7 @@ shinyUI(fluidPage(
 
 
     tabPanel("Ecological balance",
-             selectInput("country", "Choose a country:",
+             selectInput("country", "Choose one or more countries:",
                          c(unique(data$country)),
                          multiple = TRUE),
              plotOutput("Sustainibility plot")),
@@ -25,7 +25,7 @@ shinyUI(fluidPage(
 
 
     tabPanel("Timeseries",
-             selectInput("countries_ts","choose countries:",
+             selectInput("countries_ts","Choose one or more countries:",
                          c(unique(data$country)),
                          multiple = TRUE),
 
