@@ -1,8 +1,26 @@
-Interactive Shiny App: Carbon Emissions by Country and by Year
+# Motivation
 
-In the last decades, with the rise of global warming and natural disasters, there is an urgent need to reduce our individual ecological footprint by reducing our overall consumption, shift our purchasing habits and so on, in order to globally contribute to a common goal: a cleaner planet. The following piece of work aims to create a Shiny app that will gather worldwide data on carbon emissions caused by different types of production lands and exploit the information to produce visual outcomes enabling a user to look for specific information by country and by year, and allowing comparisons by country or region.
+Package **G6** results from our interest in visualizing the impact of production (respectively consumption) on climate's deterioration in the past 50 years throughout the world. The climate crisis is the direct consequence of the environmental resources' over-consumption. Since the industrial revolution, innovations pushed industries to always consume more without anticipating facing limited resources and without considering their impact on the environment. Much later with the rise of impressive technological advancements, we have come to the realization that we have taken clean land, air, and water for granted and have damaged the abilities of land, air, and water to absorb society's waste products.
 
-This tool will be able to help spreading awareness and understand the gravity and urgency of undertaking immediate long-lasting actions against climate change, as well as making data research more convenient for those needing it.
+Package G6 uses an external data base collecting information on some countries' Ecological Footprint over the past 55 years to display the consumption habits of populations. The functionalities of the package show the global decline in responsibility and its impact on the planet. 
 
-This project is still at its starting point, only the Project Proposal has been made for now.
+# Instructions
+
+1) To install package **G6** use the following command in your console:
+
+remotes::install_github("ptds2021/project--G6/G6")
+
+2) When you are if you would like to update some packages choose option 1:All so that all packages are updated.
+
+3) When you are asked if you want to install from sources the packages which need compilation write NO.
+
+4) Once the package installation is DONE, write the following command in your console to call the package library:
+
+library(G6)
+
+5) The following video walks you through the functions of the package to show you what information you can explore:
+
+
+
+
 
