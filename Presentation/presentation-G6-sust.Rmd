@@ -10,16 +10,16 @@ output: ioslides_presentation
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## Intro
+## Context
 
-In the last decades, with the rise of global warming and natural disasters, there is an urgent need to reduce our individual ecological footprint. By now, we are aware that by reducing our overall consumption, shift our purchasing habits and so on, we can globally contribute to a common goal: a cleaner planet.
+- Recent non-advancements and non-agreements (G7)
 
 ## Agenda
 
 - Identified pain points
 - Goals and Impact
 - Data
-- Sustainability App
+- Sustainability App 
 - Comparison of results
 - Team
 
@@ -59,4 +59,31 @@ We try to have the impact on three different levels.
 
 - *Variables:* The (public) data set has 12 variables and provide information on 72,186 observations on 192 countries
 
-- *
+
+## Sustainability App
+
+- World Map Overview [Total]
+- Stats [Fr, Ger, Bel, Ch]
+- Time Series 
+- Sustainability
+
+
+## Comparison of results
+
+- Best/Worst
+- Timeseries 1961-2016 -> Evolution for each of the four countries
+- Anomalies and Surprises: Chinas' growth, unexpected developments
+
+
+## Limitations and Learning 
+
+- Data: Generality of dataset, bias
+- Syntax
+
+
+## Conclusion
+
+- Improvements for package
+- Achieved goal 
+
+
