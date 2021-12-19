@@ -18,7 +18,10 @@ knitr::opts_chunk$set(echo = FALSE)
 
 -   Heavy political discussions and debates dividing the population
 
-![Sample Picture](recyc2.jpeg)
+```{r, echo=FALSE, out.width="50%"}
+knitr::include_graphics("recyc2.jpeg")
+```
+
 
 ## Agenda
 
@@ -81,19 +84,31 @@ To address the above points and challenges, we want to create the S(ust)hinybili
 
 ## Sustainability App
 
--   World Map Overview \[Total\]
+```{r, echo=FALSE, out.width="100%", fig.cap="World Map Overview"}
+knitr::include_graphics("newplot.png")
+```
 
-![World Map](wmap.png)
 
 ## Ecological Balance (2)
 
-![Overview Ecological Balance FR, GER, BEL, CH](comp_countries.png)
+```{r, echo=FALSE, out.width="100%", fig.cap="Overview Ecological Balance FR, BEL, GER, CH."}
+knitr::include_graphics("stats1.png")
+```
+
+
 
 ## Statistics (3)
 
-![Statistics FR, GER, BEL, CH](appoverview.png)
+```{r, echo=FALSE, out.width="100%", fig.cap="Statistics FR, BEL, GER, CH."}
+knitr::include_graphics("sust1.png")
+```
+
 
 ## Time Series (4)
+
+```{r, echo=FALSE, out.width="100%", fig.cap="Time Series FR, BEL, GER, CH."}
+knitr::include_graphics("ts.png")
+```
 
 ## Comparison of results
 
