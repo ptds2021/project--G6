@@ -1,49 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ecological Footprint by Coutry and by Year</title>
-    <link>https://project-g6.netlify.app/</link>
-    <description>Recent content on Ecological Footprint by Coutry and by Year</description>
+    <title>Group 6 Project: Production Sites&#39; Ecological Footprint</title>
+    <link>https://ptds2021-g6.netlify.app/</link>
+    <description>Recent content on Group 6 Project: Production Sites&#39; Ecological Footprint</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 01 Dec 2020 21:13:14 -0500</lastBuildDate><atom:link href="https://project-g6.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://ptds2021-g6.netlify.app/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hello R Markdown</title>
-      <link>https://project-g6.netlify.app/2020/12/01/hello-r-markdown/</link>
-      <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
+      <title>Introduction</title>
+      <link>https://ptds2021-g6.netlify.app/introduction/</link>
+      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://project-g6.netlify.app/2020/12/01/hello-r-markdown/</guid>
-      <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.</description>
+      <guid>https://ptds2021-g6.netlify.app/introduction/</guid>
+      <description>Goals and Impact All of us are aware of the urgent need to reduce our individual ecological footprint by reducing our overall consumption, shift our purchasing habits, recycle more, invest in renewable energies and globally contribute to a common goal: a cleaner planet. Even though world leaders gather to unify and work as a united front towards sustainable changes with the ultimate goal to slow climate change, we still currently detect many problems surrounding the topic of sustainability.</description>
     </item>
     
     <item>
-      <title>A Plain Markdown Post</title>
-      <link>https://project-g6.netlify.app/2016/12/30/a-plain-markdown-post/</link>
-      <pubDate>Fri, 30 Dec 2016 21:49:57 -0700</pubDate>
+      <title></title>
+      <link>https://ptds2021-g6.netlify.app/data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://project-g6.netlify.app/2016/12/30/a-plain-markdown-post/</guid>
-      <description>This is a post written in plain Markdown (*.md) instead of R Markdown (*.Rmd). The major differences are:
- You cannot run any R code in a plain Markdown document, whereas in an R Markdown document, you can embed R code chunks (```{r}); A plain Markdown post is rendered through Blackfriday, and an R Markdown document is compiled by rmarkdown and Pandoc.  There are many differences in syntax between Blackfriday&amp;rsquo;s Markdown and Pandoc&amp;rsquo;s Markdown.</description>
+      <guid>https://ptds2021-g6.netlify.app/data/</guid>
+      <description>Key terms   Ecological Footprint: &amp;ldquo;A measure of how much area of biologically productive land and water an individual, population, or activity requires to produce all the resources it consumes and to absorb the waste it generates, using prevailing technology and resource management practices. The Ecological Footprint is usually measured in global hectares (gha). Because trade is global, an individual or country&amp;rsquo;s Footprint includes land or sea from all over the world.</description>
     </item>
     
     <item>
-      <title>About</title>
-      <link>https://project-g6.netlify.app/about/</link>
-      <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
+      <title></title>
+      <link>https://ptds2021-g6.netlify.app/shiny/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://project-g6.netlify.app/about/</guid>
-      <description>This is a &amp;ldquo;hello world&amp;rdquo; example website for the blogdown package. The theme was forked from @jrutheiser/hugo-lithium-theme and modified by Yihui Xie.</description>
+      <guid>https://ptds2021-g6.netlify.app/shiny/</guid>
+      <description>Motivation Package G6 results from our interest in visualizing the impact of production (respectively consumption) on climate&amp;rsquo;s deterioration in the past 50 years throughout the world. The climate crisis is the direct consequence of the environmental resources&#39; over-consumption. Since the industrial revolution, innovations pushed industries to always consume more without anticipating facing limited resources and without considering their impact on the environment. Much later with the rise of impressive technological advancements, we have come to the realization that we have taken clean land, air, and water for granted and have damaged the abilities of land, air, and water to absorb society&amp;rsquo;s waste products.</description>
     </item>
     
     <item>
-      <title>Lorem Ipsum</title>
-      <link>https://project-g6.netlify.app/2015/01/01/lorem-ipsum/</link>
-      <pubDate>Thu, 01 Jan 2015 13:09:13 -0600</pubDate>
+      <title></title>
+      <link>https://ptds2021-g6.netlify.app/team/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://project-g6.netlify.app/2015/01/01/lorem-ipsum/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
+      <guid>https://ptds2021-g6.netlify.app/team/</guid>
+      <description>Group Members Our Programming Tools in Data Science team gathers three graduate students from the Master of Management at UNIL, one exchange student from Germany, WHU-Otto Beisheim School of Management and one exchange student from Louvain School of Management.
+Each tab of this section highlights each member&amp;rsquo;s profile, chosen image, hobbies, and favorite quote.
+Daniel Welz I am currently an Erasmus exchange student from Germany. In Germany, I was born in Stuttgart, however I am studying near Koblenz in the beautiful Rhine valley.</description>
     </item>
     
   </channel>
