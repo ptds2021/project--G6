@@ -46,8 +46,8 @@ G6_stats <- function(countries_list, record_type, indicator, year_range){
                                 sd = stats::sd(indicator, na.rm = TRUE),
                                 max = max(indicator, na.rm = TRUE),
                                 total = sum(indicator, na.rm = TRUE),
-                                evolution = ((dplyr::last(indicator)-dplyr::first(indicator))/dplyr::first(indicator))*100,
-                                global_proportion = mean(indicator)/mean_world)
+                                evolution = paste(round(((dplyr::last(indicator)-dplyr::first(indicator))/dplyr::first(indicator))*100,digits = 2),"%"),
+                                global_proportion = paste(round((mean(indicator)/mean_world)*100,digits = 2),"%"))
 
     return(summary)
 
@@ -93,8 +93,8 @@ G6_stats <- function(countries_list, record_type, indicator, year_range){
                                 sd = stats::sd(indicator, na.rm = TRUE),
                                 max = max(indicator, na.rm = TRUE),
                                 total = sum (indicator, na.rm = TRUE),
-                                evolution = ((dplyr::last(indicator)-dplyr::first(indicator))/dplyr::first(indicator))*100,
-                                global_proportion = mean(indicator, na.rm = TRUE)/mean_world)
+                                evolution = paste(round(((dplyr::last(indicator)-dplyr::first(indicator))/dplyr::first(indicator))*100,digits = 2),"%"),
+                                global_proportion = paste(round((mean(indicator)/mean_world)*100,digits = 2),"%"))
 
     # remove world because it was not selected
     summary <- summary %>%
