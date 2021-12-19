@@ -19,6 +19,8 @@ timeseries <- function(countries_list, record_type, indicator, doforecast, yearf
     install.packages("fpp3")
   }
 
+  library(fpp3)
+
   #read data
   data <- readr::read_csv(system.file("extdata", "NFA_2019_public_data.csv", package = "G6"))
 
