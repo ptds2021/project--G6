@@ -65,7 +65,7 @@ Please note that due to the large data set we use and the functionalities we cre
 
 First of all, we are aware that there is room for improvement regarding our package. Indeed, one of the first aspects is the consequent size of the data set we use which requires some time to return our visualizations. Besides the computational time, the size also consumes a large part of the memory of the package which apparently exceeds an "accepted" threshold and is indicated in a **note** in the R CMD CHECK. 
 
-Second, we remember from the last class that we can use modules to manage the complexity of the shiny app ...
+Second, we remember from the last class that we can use modules to manage the complexity of the shiny app. In this shiny App, for lack of time we could not implement the modularization of the shiny functions but we are aware of the improvement opportunity.
 
 
 
