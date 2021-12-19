@@ -1,8 +1,8 @@
 ---
-title: "timeseries"
+title: "G6_timeseries"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{timeseries}
+  %\VignetteIndexEntry{G6_timeseries}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -16,10 +16,10 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(G6)
-timeseries
+G6_timeseries
 ```
 
-##Ts_Countries
+## Ts_Countries
 
 The function plot Times Series of countries ecological footprints, to observe its evolution over time.
 It also make forecasts for a duration defined by the user. 

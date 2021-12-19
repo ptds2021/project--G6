@@ -16,7 +16,7 @@ shinyServer(function(input, output) {
   })
 
   output$Timeseries <- renderPlot({
-    timeseries(input$countries_ts, input$record_ts, input$indicator_ts, input$doforecast, input$yearforecast)
+    G6_timeseries(input$countries_ts, input$record_ts, input$indicator_ts, input$doforecast, input$yearforecast)
   })
 
   output$Statistics <- renderTable({

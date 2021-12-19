@@ -10,7 +10,8 @@ Authors@R: c(
 Maintainer: Colin Steffe <colin.steffe@unil.ch>
 Description: This package provides functions to study one or more countries' production sites' ecological footprint (yearly).
 License: MIT + file LICENSE
-Depends: R (>= 3.3.1)
+Depends: R (>= 3.3.1),
+         fpp3
 Imports: shiny (>= 1.7.1),
          dplyr,
          fable,
