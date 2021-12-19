@@ -1,16 +1,15 @@
 #' @title Time Series Plot
-#' @description The function returns times series of the evolution of different production surface areas' ecological footprints over the years for one or more selected countries. The plot can display some forecasting if the user selects the option to do so.
+#' @description The function returns times series of the evolution of different production surface areas' ecological footprints over the years for one or more selected countries.
 #' @param countries_list List of countries chosen by the user.
 #' @param record_type Record chosen by the user.
 #' @param indicator Indicator selected by the user (crop land, grazing land, forest land, fishing ground, built-up land, carbon and total).
-#' @param doforecast Option to display forecasts or not.
-#' @param yearforecast Number of years over which to forecast.
 #' @return A Time Series of the evolution of ecological footprint of chosen countries.
 #' @importFrom magrittr "%>%"
 #' @import fpp3
 #' @export
 #' @examples
-#' G6_timeseries(list("Spain", "Italy","France", "Germany","Switzerland"), "EFProdTotGHA", "fishing_ground")
+#' country_list <- list("Spain", "Italy","France", "Germany","Switzerland")
+#' G6_timeseries(country_list, "EFProdTotGHA", "fishing_ground")
 
 G6_timeseries <- function(countries_list, record_type, indicator){
 
@@ -29,7 +28,7 @@ G6_timeseries <- function(countries_list, record_type, indicator){
 
 
 
-    #no forecast
+
     standard_plot <- data_country_ts %>%
                      feasts::autoplot(indicator_name) +
                      ggplot2::ggtitle(paste("Time series by country and year for :",indicator)) +

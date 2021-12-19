@@ -12,17 +12,14 @@ G6_timeseries(countries_list, record_type, indicator)
 \item{record_type}{Record chosen by the user.}
 
 \item{indicator}{Indicator selected by the user (crop land, grazing land, forest land, fishing ground, built-up land, carbon and total).}
-
-\item{doforecast}{Option to display forecasts or not.}
-
-\item{yearforecast}{Number of years over which to forecast.}
 }
 \value{
 A Time Series of the evolution of ecological footprint of chosen countries.
 }
 \description{
-The function returns times series of the evolution of different production surface areas' ecological footprints over the years for one or more selected countries. The plot can display some forecasting if the user selects the option to do so.
+The function returns times series of the evolution of different production surface areas' ecological footprints over the years for one or more selected countries.
 }
 \examples{
-G6_timeseries(list("Spain", "Italy","France", "Germany","Switzerland"), "EFProdTotGHA", "fishing_ground")
+country_list <- list("Spain", "Italy","France", "Germany","Switzerland")
+G6_timeseries(country_list, "EFProdTotGHA", "fishing_ground")
 }
