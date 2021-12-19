@@ -21,15 +21,18 @@ By copying and pasting the following link you will access our website: https://p
 
 To go back to the main page of the website you can click on the top left logo. 
 
-### Website content
+### Resources contained in the folder Website
 
-* config.toml : This file contains the Hugo theme -lithium- and the configuration of the website.
+* config.toml : This file contains the Hugo theme -lithium- and the configuration of the website. In details, you can change the baseurl to the netlify one. You can also modify the navbar and the logo. 
 
-* content : This folder is filled with the following navbar items and their content : Introduction, Data, Shiny and Team. 
+* content : This folder is filled with the following navbar items and their content : Introduction, Data, Shiny and Team. Each file is a Markdown file and contain our written report section for each item.
 
-* netlify.toml : This file is used to set up the options of the pdts-g6 Netlify website.
+* netlify.toml : This file is used to set up the options of the pdts-g6 Netlify website (based on Hugo version 0.91.0).
 
-* themes : Contains every files needed for the construction of the website following the lithium Hugo theme.
+* resources : Contains every assets and images related to the website visual aspect.
+
+* themes : Contains every files needed for the construction of the website following the lithium Hugo theme. It also contains example to guide the user through the hugo theme settings.
+
 
 ----------------------
 # G6 (package folder)
