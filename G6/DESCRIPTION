@@ -10,8 +10,7 @@ Authors@R: c(
 Maintainer: Colin Steffe <colin.steffe@unil.ch>
 Description: This package provides functions to study one or more countries' production sites' ecological footprint (yearly).
 License: MIT + file LICENSE
-Depends: R (>= 3.3.1),
-         fpp3
+Depends: R (>= 3.3.1)
 Imports: shiny (>= 1.7.1),
          dplyr,
          fable,
@@ -20,14 +19,14 @@ Imports: shiny (>= 1.7.1),
          here,
          readr,
          tsibble,
-         fpp3,
          plotly,
          data.table,
          roxygen2,
          magrittr,
          feasts,
          maps,
-         forecast
+         forecast,
+         fpp3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
