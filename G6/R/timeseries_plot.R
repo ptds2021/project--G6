@@ -28,7 +28,7 @@ timeseries <- function(countries_list, record_type, indicator, doforecast, yearf
   # select variables and filter for country and record
   data_country_ts <- data %>%
                      fpp3::select(year, country, record, {{indicator}}) %>%
-                     fpp3::filter(country %in% countries_list & record == record_type)
+                     dplyr::filter(country %in% countries_list & record == record_type)
 
   data_country_ts <- data_country_ts %>%
                      fpp3::tsibble(index = year, key = country) %>%
