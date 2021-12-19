@@ -7,10 +7,6 @@ disqusShortname = ""
 ignoreFiles = ["\\_cache$", "\\.knit\\.md$", "\\.utf8\\.md$"]
 
 
-[permalinks]
-    post = "/:year/:month/:day/:slug/"
-
-
 [[menu.main]]
     name = "Introduction"
     url = "/Introduction/"
