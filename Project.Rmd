@@ -18,7 +18,7 @@ library(readr)
 options(scipen=999)
 
 # Upload the data 
-data<- read_csv(here::here("NFA_2019_public_data.csv"))
+data <- readr::read_csv(system.file("extdata", "NFA_2019_public_data.csv", package = "G6"))
 
 ```
 
