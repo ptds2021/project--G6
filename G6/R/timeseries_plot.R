@@ -7,7 +7,7 @@
 #' @param yearforecast Number of years over which to forecast.
 #' @return A Time Series of the evolution of ecological footprint of chosen countries.
 #' @importFrom magrittr "%>%"
-#' @importFrom ("utils", "install.packages")
+#' @importFrom utils "install.packages"
 #' @export
 #' @examples
 #' country_list <- list("Spain", "Italy","France", "Germany","Switzerland")
@@ -15,8 +15,9 @@
 
 timeseries <- function(countries_list, record_type, indicator, doforecast, yearforecast){
 
-  if (!requireNamespace("fpp3", quietly = TRUE))
+  if (!requireNamespace("fpp3", quietly = TRUE)){
     install.packages("fpp3")
+  }
 
   #read data
   data <- readr::read_csv(system.file("extdata", "NFA_2019_public_data.csv", package = "G6"))
