@@ -14,11 +14,6 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
-library(G6)
-worldmap_overview
-```
-
 ## Description
 
 The function returns an interactive World map of available countries displaying the total ecological footprint of different production sites (crop land, grazing land, forest land, fishing ground, built-up land and carbon), by selected record type ("AreaPerCap", "AreaTotHA", "BiocapPerCap", "BiocapTotGHA", "EFConsPerCap", "EFConsTotGHA", "EFProdPerCap", "EFProdTotGHA"). The user can move the mouse cursor on a country and see more detailed information on the different production sites' ecological footprint.

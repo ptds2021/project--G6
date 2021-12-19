@@ -14,11 +14,6 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
-library(G6)
-sustainability()
-```
-
 # Description
 
 The function returns a bar plot showing the difference per year between the biocapacity (in gha) per capita and the ecological footprint of production (in gha) per capita. Each bar shows then a sustainability value which can be positive or negative. If the value is positive, this means that a country for one year is sustainable (i.e. it has more biocapacity than what it actually uses).
