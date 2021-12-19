@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 
 # Description
 
-The function returns times series of the evolution of different production surface areas' ecological footprints over the years for one or more selected countries. The plot can display some forecasting if the user selects the option to do so.
+The function returns times series of the evolution of different production surface areas' ecological footprints over the years for one or more selected countries. 
 
 # Shiny app
 
