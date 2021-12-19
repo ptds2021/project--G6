@@ -50,11 +50,11 @@ To address the above points and challenges, we want to create the S(ust)hinybili
 ## Impact
 
 ::: columns-2
-**First** the individuals are nudged to learn
+**First:** the individuals are nudged to learn
 
-**Second** making ecological footprints comparable
+**Second:** making ecological footprints comparable
 
-**Third** the interactive app helps to check facts and used against wrongly spread information
+**Third:** the interactive app helps to check facts and used against wrongly spread information
 
 -   Increases knowledge and awareness
 
@@ -91,7 +91,7 @@ To address the above points and challenges, we want to create the S(ust)hinybili
 
 ## Statistics (3)
 
-![Statistics FR, GER, BEL, CH](app%20overview.png)
+![Statistics FR, GER, BEL, CH](appoverview.png)
 
 ## Time Series (4)
 
@@ -115,9 +115,20 @@ To address the above points and challenges, we want to create the S(ust)hinybili
 -   **(4)** To-Do lists and Github Projects help to track progress and have a clear view of the project
 
 ## Conclusion
+::: columns-2
+Improvements for package :
 
--   Improvements for package
--   Achieved goal
+**Second:** Reduce the data size and computational time
+
+**Third:** More complex shiny app
+
+
+-   Achieved goals : we gathered a torough database
+
+-   We managed to exploits these information to provide educational content for peoples
+
+-   Visualization is created thanks to our shiny app
+:::
 
 ## Thank you for your attention
 
