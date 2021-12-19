@@ -18,7 +18,9 @@ remotes::install_github("ptds2021/project--G6/G6")
 
 library(G6)
 
-5) The following video walks you through the functions of the package to show you what information you can explore:
+5) The following video walks you through the installation of the package:
+
+
 
 
 
