@@ -1,0 +1,26 @@
+---
+title: "launch_app"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{launch_app}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(G6)
+launch_app()
+```
+
+# Description
+
+The function calls the shiny app once the package is loaded.
+
+The user call the shiny app from the console using this fonction with no parameter inside. 

@@ -19,33 +19,11 @@ library(G6)
 worldmap_overview
 ```
 
-## Worldmap
+## Description
 
-The function worldmap_overview plots a map displaying countries ecological footprints. 
-
-### Functioning 
+The function returns an interactive World map of available countries displaying the total ecological footprint of different production sites (crop land, grazing land, forest land, fishing ground, built-up land and carbon), by selected record type ("AreaPerCap", "AreaTotHA", "BiocapPerCap", "BiocapTotGHA", "EFConsPerCap", "EFConsTotGHA", "EFProdPerCap", "EFProdTotGHA"). The user can move the mouse cursor on a country and see more detailed information on the different production sites' ecological footprint.
 
 ### Shiny app
 
-The shiny app allows user to select the country, the record and the indicator that he wants. 
+The user can choose the record type and look at the global differences between countries. 
 
-For a reminder, records are 
-
-* **AreaPerCap**: Area divided by population
-* **AreaTotHA**: Total area in hectare (ha)
-* **BiocapPerCap**: Biocapacity (in gha) divided by population
-* **BiocapTotGHA**: Total biocapacity (in gha)
-* **EFConsPerCap**: Ecological Footprint of consumption (in gha) divided by population
-* **EFConsTotGHA**: Total Ecological Footprint of consumption (in gha)
-* **EFProdPerCap**: Ecological Footprint of production (in gha) divided by population
-* **EFProdTotGHA**: Total Ecological Footprint of production (in gha)
-
-While indicators are : 
-
-* **Crop land** : The cropland Footprint provides the amount of land necessary to grow all crops consumed by humans and livestock (includes agricultural products, market animal feed, and cropped grasses used as livestock feed). 
-* **Grazing land** : The grazing land Footprint assesses demand for grazing land to feed livestock and the demand for grazing land in traded goods.
-* **Fishing ground** : The fishing ground Footprint represents the demands of fisheries on aquatic ecosystems. It is calculated by dividing the amount of primary production consumed by an aquatic specy over its lifetime by an estimate of the harvestable primary production per hectare of marine area.
-* **Built up land** : The built-up land Footprint represents bioproductive land that has been physically occupied by human activities (e.g. infrastructure areas required for housing, transportation, industrial production).
-* **Carbon** : The carbon Footprint represents the area of forest land required to sequester anthropogenic carbon dioxide emissions (e.g. domestic fossil fuel combustion, electricity use, embodied carbon in traded items and electricity, transport emissions, and non-fossil-fuel sources).
-
-Once the user chose the inputs, the shiny app display an animated plot of the country over the years, from 1961 to 2016.
