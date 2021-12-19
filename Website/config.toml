@@ -4,7 +4,7 @@ title = "Group 6 Project: Production Sites' Ecological Footprint"
 theme = "hugo-lithium"
 googleAnalytics = ""
 disqusShortname = ""
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\\.md$"]
+ignoreFiles = ["\\_cache$", "\\.knit\\.md$", "\\.utf8\\.md$"]
 
 
 [permalinks]
