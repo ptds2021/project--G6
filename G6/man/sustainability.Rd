@@ -13,7 +13,7 @@ sustainability(countries_select)
 A bar plot displaying the consumed biocapacity
 }
 \description{
-The function returns a bar plot showing the difference per year between the biocapacity (in gha) divided by the population and the ecological footprint of production (in gha) divided by the population. Each bar shows then a sustainability value which can be positive or negative. If the value is positive, this means that a country for one year is sustainable (i.e. it has more biocapacity than what it actually uses).
+The function returns a bar plot showing the difference per year between the biocapacity (in gha) per capita and the ecological footprint of production (in gha) per capita. Each bar shows then a sustainability value which can be positive or negative. If the value is positive, this means that a country for one year is sustainable (i.e. it has more biocapacity than what it actually uses).
 }
 \examples{
 countries <- list("China","Germany","India")

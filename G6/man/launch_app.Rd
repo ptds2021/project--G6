@@ -10,7 +10,7 @@ launch_app()
 shiny app UI
 }
 \description{
-Function to start the shiny app once the package is loaded
+The function calls the shiny app once the package is loaded
 }
 \examples{
 launch_app

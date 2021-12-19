@@ -21,7 +21,7 @@ timeseries(countries_list, record_type, indicator, doforecast, yearforecast)
 A Time Series of the evolution of ecological footprint of chosen countries.
 }
 \description{
-The function returns a times series of the evolution of different production surface areas' ecological footprint over the years for selected country/ies. The plot can display some forecasting if the user selects the option to do so.
+The function returns times series of the evolution of different production surface areas' ecological footprints over the years for one or more selected countries. The plot can display some forecasting if the user selects the option to do so.
 }
 \examples{
 country_list <- list("Spain", "Italy","France", "Germany","Switzerland")

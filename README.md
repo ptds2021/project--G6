@@ -55,6 +55,14 @@ If you run the *devtools::check()* function in the console you obtain the result
 
 The **/tests** folder contains files that test each function of the package. Since each function provides a visual output we only test whether the functions return a visual one. 
 
+### Running Time
+
+Please note that due to the large data set we use and the functionalities we created, it can take a little bit of time before you see a graphical visualization appear on your screen. For this specific reason, we advise you to click on the *Worldmap Overview* after exploring the other tabs since it requires the longest computing effort. 
+
+--------------
+# Improvements
+--------------
+
 
 
 

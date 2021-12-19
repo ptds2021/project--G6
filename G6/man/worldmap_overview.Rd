@@ -13,7 +13,7 @@ worldmap_overview(record_type)
 An interactive World map
 }
 \description{
-The function returns an interactive World map of available countries displaying the total ecological footprint (crop land, grazing land, forest land, fishing ground, built-up land and carbon) of different production sites, by selected record type. The user can move the mouse cursor on a country and see more detailed information on the different production sites' ecological footprint.
+The function returns an interactive World map of available countries displaying the total ecological footprint of different production sites (crop land, grazing land, forest land, fishing ground, built-up land and carbon), by selected record type ("AreaPerCap", "AreaTotHA", "BiocapPerCap", "BiocapTotGHA", "EFConsPerCap", "EFConsTotGHA", "EFProdPerCap", "EFProdTotGHA"). The user can move the mouse cursor on a country and see more detailed information on the different production sites' ecological footprint.
 }
 \examples{
 worldmap_overview("AreaPerCap")
