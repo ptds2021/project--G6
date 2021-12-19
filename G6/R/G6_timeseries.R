@@ -10,10 +10,9 @@
 #' @import fpp3
 #' @export
 #' @examples
-#' country_list <- list("Spain", "Italy","France", "Germany","Switzerland")
-#' G6_timeseries(country_list, "EFProdTotGHA", "fishing_ground", "No", 10)
+#' G6_timeseries(list("Spain", "Italy","France", "Germany","Switzerland"), "EFProdTotGHA", "fishing_ground")
 
-G6_timeseries <- function(countries_list, record_type, indicator, doforecast, yearforecast){
+G6_timeseries <- function(countries_list, record_type, indicator){
 
   #read data
   data <- readr::read_csv(system.file("extdata", "NFA_2019_public_data.csv", package = "G6"))
@@ -28,7 +27,7 @@ G6_timeseries <- function(countries_list, record_type, indicator, doforecast, ye
                      tsibble::tsibble(index = year, key = country) %>%
                      dplyr::mutate(indicator_name = as.double(data_country_ts[[indicator]]))
 
-  if(doforecast == "No"){
+
 
     #no forecast
     standard_plot <- data_country_ts %>%
@@ -39,21 +38,7 @@ G6_timeseries <- function(countries_list, record_type, indicator, doforecast, ye
 
     return(standard_plot)
 
-  }else{
 
-    #forecast
-    fit <- data_country_ts %>%
-           fabletools::model(fable::ARIMA(indicator_name))
-
-    forecast_plot <- fit %>%
-                     fabletools::forecast(h = yearforecast) %>%
-                     forecast::autoplot(data_country_ts) +
-                     ggplot2::ggtitle(paste("Time series by country and year for :",indicator)) +
-                     ggplot2::xlab("year") +
-                     ggplot2::ylab(paste0("for record : ", data_country_ts$record[1]))
-
-    return(forecast_plot)
-  }
 
 }
 

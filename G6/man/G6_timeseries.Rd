@@ -4,7 +4,7 @@
 \alias{G6_timeseries}
 \title{Time Series Plot}
 \usage{
-G6_timeseries(countries_list, record_type, indicator, doforecast, yearforecast)
+G6_timeseries(countries_list, record_type, indicator)
 }
 \arguments{
 \item{countries_list}{List of countries chosen by the user.}
@@ -24,6 +24,5 @@ A Time Series of the evolution of ecological footprint of chosen countries.
 The function returns times series of the evolution of different production surface areas' ecological footprints over the years for one or more selected countries. The plot can display some forecasting if the user selects the option to do so.
 }
 \examples{
-country_list <- list("Spain", "Italy","France", "Germany","Switzerland")
-G6_timeseries(country_list, "EFProdTotGHA", "fishing_ground", "No", 10)
+G6_timeseries(list("Spain", "Italy","France", "Germany","Switzerland"), "EFProdTotGHA", "fishing_ground")
 }

@@ -38,15 +38,6 @@ shinyUI(fluidPage(
                            "fishing_ground", "built_up_land", "carbon", "total"),
                          multiple = FALSE),
 
-             selectInput("doforecast", "Choose to forcast:",
-                         c("Yes","No"),
-                         multiple = FALSE),
-
-             sliderInput(inputId = "yearforecast",
-                         label = "Number of years to forecast:",
-                         min = 1,
-                         max = 50,
-                         value = 30),
              plotOutput("Timeseries")),
 
     tabPanel("World Overview",
