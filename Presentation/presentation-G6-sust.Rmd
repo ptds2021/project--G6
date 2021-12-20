@@ -118,6 +118,12 @@ knitr::include_graphics("sust1.png")
 knitr::include_graphics("ts.png")
 ```
 
+## Website 
+
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("ws.png")
+```
+
 
 ## Limitations
 
